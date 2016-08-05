@@ -2,7 +2,7 @@
 
 A Rails app for healthcare professionals to keep a record of their CEUs (Continuing Education Units).
 
-(Use Devise?) (Use Pundit?)
+(Use Devise? --YES) (Use Pundit?--MAYBE) (Use Omniauth?--MAYBE)
 
 ## Initial Setup
 
