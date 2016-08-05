@@ -1,0 +1,11 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-primary">
+  <%= link_to root_path, class: 'navbar navbar-brand' do %><i class="fa fa-heartbeat fa-2x"></i><% end %>
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+      <%= link_to "Log In", new_user_session_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Sign Up", new_user_registration_path, class: 'nav-link' %>
+    </li>
+  </ul>
+</nav>

@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsAssessmentCeuTracker</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>RailsAssessmentCeuTracker</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
-    <%= render 'layouts/navbar' %>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
+    <body>
+        <%= render 'layouts/navbar' %>
+        <br><br><br>
+        <div class="container">
+          <%= yield %>
+        <div class="navbar navbar-dark bg-primary navbar-fixed-bottom">
+            <div class="container">
+                <p class="navbar-text pull-left">&copy; 2016 Michael Casciato. All Rights Reserved.</p>
+            </div>
+        </div>
+    </body>
 </html>
