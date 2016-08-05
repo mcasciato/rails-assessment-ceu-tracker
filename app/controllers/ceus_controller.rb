@@ -1,0 +1,2 @@
+class CeusController < ApplicationController
+end
