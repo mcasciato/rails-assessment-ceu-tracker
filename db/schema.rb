@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805192556) do
+ActiveRecord::Schema.define(version: 20160805192814) do
 
   create_table "certificates", force: :cascade do |t|
     t.string   "type"
     t.integer  "ceu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ceus", force: :cascade do |t|
+    t.string   "title"
+    t.date     "date"
+    t.integer  "duration"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
