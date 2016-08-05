@@ -21,8 +21,11 @@ ActiveRecord::Schema.define(version: 20160805193126) do
   end
 
   create_table "ceu_certificates", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "ceu_id"
+    t.integer  "certificate_id"
+    t.boolean  "completed",      default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "ceus", force: :cascade do |t|
