@@ -22,9 +22,12 @@
 </div>
 <br>
 <div class="field">
-  <span class="field"><i class="fa fa-trophy"></i></span> <%= f.label :"Choose Certificate Type:" %>
+  <span class="field"><i class="fa fa-trophy"> </i> </span> <%= f.label :'Enter State or National:' %>
+
   <br>
-  <%= f.collection_radio_buttons :certificate_ids, Certificate.all, :id, :classification %>
+  <%= f.fields_for :certificates, @certficates do |certificate| %>
+    <%= certificate.text_field :classification %>
+    <% end %>
 </div>
 <br>
 <div class="actions">
