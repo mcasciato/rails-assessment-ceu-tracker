@@ -12,6 +12,15 @@ class CeusController < ApplicationController
       @ceu = Ceu.find(params[:id])
     else
       @ceu = Ceu.find(params[:id])
-    end    
+    end
   end
+
+  def new
+    @ceu = Ceu.new(user_id: params[:user_id])
+  end
+
+  private
+
+  def ceu_params
+    params.require(:ceu).permit(:title, :date, :duration)
 end
