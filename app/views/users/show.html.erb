@@ -26,8 +26,24 @@
     <tbody>
       <% current_user.ceus.each do |ceu| %>
       <tr>
-        <%= render 'ceus/ceu' %>
-      </tr>
+        <td>
+            <%= ceu.id %>
+        </td>
+        <td>
+            <%= ceu.title %>
+        </td>
+        <td>
+            <%= ceu.date %>
+        </td>
+        <td>
+            <%= ceu.location %>
+        </td>
+        <td>
+            <%= ceu.duration %>
+        </td>
+        <td>
+          Insert certficate type...?
+        </td>      </tr>
       <% end %>
   </tbody>
 </table>
