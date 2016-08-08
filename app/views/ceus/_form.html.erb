@@ -1,8 +1,13 @@
 <%= form_for @ceu do |f| %>
 
 <div class="field">
-  <span class="field"><i class="fa fa-infor"></i></span>
+  <span class="field"><i class="fa fa-info"></i></span>
   <%= f.text_field :title, placeholder: "CEU Title" %>
+</div>
+<br>
+<div class="field">
+  <span class="field"><i class="fa fa-calendar-o"></i></span>
+  <%= f.date_field :date %>
 </div>
 <br>
 
