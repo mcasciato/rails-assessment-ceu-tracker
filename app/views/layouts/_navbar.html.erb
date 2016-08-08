@@ -2,7 +2,6 @@
   <%= link_to root_path, class: 'navbar navbar-brand' do %><i class="fa fa-heartbeat fa-2x"></i><% end %>
   <ul class="nav navbar-nav">
     <% if user_signed_in? %>
-    <li class="nav-item"><%= link_to "Users", users_path, class: 'nav-link' %></li>
     <li class="nav-item"><%= link_to "My Account", user_path(current_user), class: 'nav-link' %></li>
     <li class="nav-item"><%= link_to "New CEU", new_ceus_path, class: 'nav-link' %></li>
     <li class="nav-item"><%= link_to "All CEUs", ceus_path, class: 'nav-link' %></li>

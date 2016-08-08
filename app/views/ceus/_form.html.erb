@@ -1,4 +1,5 @@
 <%= form_for @ceu do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
 
 <div class="field">
   <span class="field"><i class="fa fa-info"></i></span>
