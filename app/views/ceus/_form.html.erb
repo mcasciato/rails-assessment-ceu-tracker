@@ -21,13 +21,11 @@
 </div>
 <br>
 <div class="field">
-  <%= f.label :"Choose Certificate Type:" %>
-  <span class="field"><i class="fa fa-trophy"></i></span>
+  <span class="field"><i class="fa fa-trophy"></i></span> <%= f.label :"Choose Certificate Type:" %>
+  <br>
   <%= f.collection_radio_buttons :certificate_ids, Certificate.all, :id, :classification %>
-
-  <!-- eventually add in certificate type: State or National -->
-
 </div>
+<br>
 <div class="actions">
   <%= f.submit "Create CEU", class: 'btn btn-primary' %>
 </div>

@@ -20,18 +20,15 @@ class CeusController < ApplicationController
   end
 
   def create
-    ceu = current_user.ceus.build(ceu_params)
-    if ceu.save
-      redirect_to user_path(current_user)
-    else
-      redirect_to users_path
+    @ceu = Ceu.new(ceu_params)
+    @ceu.save
+    redirect_to user_path(current_user)
       # maybe change this later?
-    end
   end
 
   private
 
   def ceu_params
-    params.require(:ceu).permit(:title, :date, :duration, :location)
+    params.require(:ceu).permit(:title, :date, :duration, :location, :certificate_ids => [], certificate_attributes: [:classification])
   end
 end
