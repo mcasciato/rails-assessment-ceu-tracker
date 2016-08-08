@@ -22,12 +22,9 @@
 </div>
 <br>
 <div class="field">
-  <span class="field"><i class="fa fa-trophy"> </i> </span> <%= f.label :'Enter State or National:' %>
-
+  <span class="field"><i class="fa fa-trophy"> </i> Certificate Type: <em>(Enter State or National)</em></span>
   <br>
-  <%= f.fields_for :certificates, @ceu.certficates.build do |certificates_fields| %>
-    <%= certificates_fields.text_field :classification %>
-    <% end %>
+  <input type="text" name="name" value=""> <!--change this -->
 </div>
 <br>
 <div class="actions">
