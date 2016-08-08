@@ -1,6 +1,6 @@
 class Certificate < ActiveRecord::Base
-  has_many :ceu_certificates
-  has_many :ceus, through: :ceu_certificates
+  belongs_to :user
+  belongs_to :ceu
   validates :classification, presence: true
 
   accepts_nested_attributes_for :ceus, reject_if: :all_blank
