@@ -1,4 +1,16 @@
 <h1>Hello <%= current_user.name %></h1>
-<p class="lead">
-  You signed in successfully!
+
+<h3>Your Information:</h3>
+
+<p class="lead">Occupation: <%= @user.occupation %></p>
+<p class="lead">Email: <%= @user.email %></p>
+
+<%= link_to "Edit User", edit_user_registration_path(@user), class: 'btn btn-warning' %>
+
+<br><br><br>
+
+<h2>Your CEUs:</h2>
+
+<p>
+  <i>Table of user's CEUs</i>
 </p>
