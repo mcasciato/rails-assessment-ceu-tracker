@@ -10,6 +10,16 @@
   <%= f.date_field :date %>
 </div>
 <br>
+<div class="field">
+  <span class="field"><i class="fa fa-map-marker"></i></span>
+  <%= f.text_field :location, placeholder: "Location" %>
+</div>
+<br>
+<div class="field">
+  <span class="field"><i class="fa fa-clock-o"></i></span>
+  <%= f.number_field :duration, placeholder: "Duration in Minutes" %>
+</div>
+<br>
 
 
 <% end %>
