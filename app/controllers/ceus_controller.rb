@@ -23,4 +23,5 @@ class CeusController < ApplicationController
 
   def ceu_params
     params.require(:ceu).permit(:title, :date, :duration)
+  end
 end
