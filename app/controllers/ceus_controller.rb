@@ -17,14 +17,12 @@ class CeusController < ApplicationController
 
   def new
     @user = User.find_by(id: params[:user_id])
-    @ceu = Ceu.new
+    @ceu = @user.ceus.build
   end
 
   def create
-    @ceu = Ceu.new(ceu_params)
-    @ceu.save
+    @ceu = current_user.ceus.create(ceu_params)
     redirect_to user_path(current_user)
-      # maybe change this later?
   end
 
   private

@@ -41,9 +41,10 @@
         <td>
             <%= ceu.duration %>
         </td>
+        <% end %>
         <td>
-          Insert certficate type...?
-        </td>      </tr>
-      <% end %>
+           <%= current_user.ceu_certificate.classification %>
+        </td>
+      </tr>
   </tbody>
 </table>
