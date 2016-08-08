@@ -6,4 +6,12 @@ class CeusController < ApplicationController
       @ceus = Ceu.all
     end
   end
+
+  def show
+    if params[:user_id]
+      @ceu = Ceu.find(params[:id])
+    else
+      @ceu = Ceu.find(params[:id])
+    end    
+  end
 end
