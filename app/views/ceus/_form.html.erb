@@ -20,7 +20,11 @@
   <%= f.number_field :duration, placeholder: "Duration in Minutes" %>
 </div>
 <br>
-<!-- eventually add in certificate type: State or National -->
+<div class="field">
+  <%= f.label :"Choose Certificate Type:" %>
+  <!-- eventually add in certificate type: State or National -->
+
+</div>
 <div class="actions">
   <%= f.submit "Create CEU", class: 'btn btn-primary' %>
 </div>
