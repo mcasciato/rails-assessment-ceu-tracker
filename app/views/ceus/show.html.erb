@@ -1,6 +1,12 @@
 <h2><%= @ceu.title %></h2>
 <p>
-  location: <%= @ceu.location %>
+  Location: <%= @ceu.location %>
+</p>
+<p>
+  Date: <%= @ceu.date %>
+</p>
+<p>
+  Duration: <%= @ceu.duration %> minutes
 </p>
 Certificate:
   <% @ceu.certificates.each do |certificate| %>
