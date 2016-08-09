@@ -13,6 +13,12 @@ Certificate:
     <%= certificate.classification %>
   <% end %>
 <br><br>
+<h3>Add a Note:</h3>
+  <%= form_for @ceu.notes.build do |f| %>
+    <%= f.hidden_field :ceu_id %>
+    <%= f.text_area :content %>
+  <% end %>
+<br><br>
   <%= link_to "Edit CEU", edit_ceu_path(@ceu), class: 'btn btn-warning' %>
   <br><br>
   <%= form_tag ceu_path(@ceu), method: "delete" %>

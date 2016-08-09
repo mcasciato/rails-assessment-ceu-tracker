@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :ceus, only: [:show, :new, :edit]
   end
     resources :ceus
+    resources :notes
 end
