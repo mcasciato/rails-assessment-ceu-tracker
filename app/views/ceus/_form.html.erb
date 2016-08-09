@@ -24,7 +24,9 @@
 <div class="field">
   <span class="field"><i class="fa fa-trophy"> </i> Certificate Type: <em>(Enter State or National)</em></span>
   <br>
-  <input type="text" name="name" value=""> <!--change this -->
+  <%= fields_for :certificates, @ceu.certificates.build do |certificates_fields| %>
+    <%= certificates_fields.text_field :classification %>
+  <% end %>
 </div>
 <br>
 <div class="actions">
