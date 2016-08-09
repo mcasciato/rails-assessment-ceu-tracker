@@ -40,14 +40,14 @@ ActiveRecord::Schema.define(version: 20160808221136) do
 
   create_table "notes", force: :cascade do |t|
     t.text     "content"
-    t.integer  "user_id_id"
-    t.integer  "ceu_id_id"
+    t.integer  "user_id"
+    t.integer  "ceu_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "notes", ["ceu_id_id"], name: "index_notes_on_ceu_id_id"
-  add_index "notes", ["user_id_id"], name: "index_notes_on_user_id_id"
+  add_index "notes", ["ceu_id"], name: "index_notes_on_ceu_id"
+  add_index "notes", ["user_id"], name: "index_notes_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
