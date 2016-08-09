@@ -46,6 +46,12 @@ class CeusController < ApplicationController
     end
   end
 
+  def destroy
+    @ceu = current_user.ceus.find_by(id: params[:id])
+    @ceu.destroy
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def ceu_params
