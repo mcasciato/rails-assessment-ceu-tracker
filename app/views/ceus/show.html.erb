@@ -13,11 +13,19 @@ Certificate:
     <%= certificate.classification %>
   <% end %>
 <br><br>
-<h3>Add a Note:</h3>
+<h4>Add a Note:</h4>
   <%= form_for @ceu.notes.build do |f| %>
     <%= f.hidden_field :ceu_id %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content %><br>
+    <%= f.submit "Create Note", class: 'btn btn-primary' %>
   <% end %>
+<br><br>
+
+<h4>All Notes:</h4>
+    <% @ceu.notes.each do |note| %>
+    <p><%= note.content %></p>
+    <% end %>
+
 <br><br>
   <%= link_to "Edit CEU", edit_ceu_path(@ceu), class: 'btn btn-warning' %>
   <br><br>

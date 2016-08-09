@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :ceus, only: [:show, :new, :edit]
   end
-    resources :ceus
-    resources :notes
+    resources :ceus do
+      resources :notes
+    end
 end
