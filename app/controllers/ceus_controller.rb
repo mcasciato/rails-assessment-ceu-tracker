@@ -22,7 +22,10 @@ class CeusController < ApplicationController
   end
 
   def create
-    @ceu = current_user.ceus.create(ceu_params)
+    @ceu = current_user.ceus.new(ceu_params)
+    @ceu.certificate = Certificate.create
+    binding.pry
+    @ceu.save
     redirect_to user_path(current_user)
   end
 
