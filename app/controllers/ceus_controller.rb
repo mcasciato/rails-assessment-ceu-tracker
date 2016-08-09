@@ -36,6 +36,16 @@ class CeusController < ApplicationController
     end
   end
 
+  def update
+    @ceu = Ceu.find(params[:id])
+    @ceu.update(ceu_params)
+    if @ceu.save
+      redirect_to @ceu
+    else
+      render :edit
+    end
+  end
+
   private
 
   def ceu_params
