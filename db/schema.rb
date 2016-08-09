@@ -11,23 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160808221136) do
+ActiveRecord::Schema.define(version: 20160809183226) do
 
   create_table "certificates", force: :cascade do |t|
     t.string   "classification"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-  end
-
-  create_table "ceu_certificates", force: :cascade do |t|
     t.integer  "ceu_id"
-    t.integer  "certificate_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
-  add_index "ceu_certificates", ["certificate_id"], name: "index_ceu_certificates_on_certificate_id"
-  add_index "ceu_certificates", ["ceu_id"], name: "index_ceu_certificates_on_ceu_id"
+  add_index "certificates", ["ceu_id"], name: "index_certificates_on_ceu_id"
 
   create_table "ceus", force: :cascade do |t|
     t.string   "title"
