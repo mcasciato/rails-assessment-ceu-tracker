@@ -1,6 +1,5 @@
 class Ceu < ActiveRecord::Base
-    has_many :ceu_certificates
-    has_many :certificates, through: :ceu_certificates
+    has_one :certificate
     has_many :notes
     has_many :users, through: :notes
 
