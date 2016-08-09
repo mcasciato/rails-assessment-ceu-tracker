@@ -6,9 +6,8 @@ class User < ActiveRecord::Base
 
   validates :name, :email, presence: true, uniqueness: true
 
-  has_many :ceus
-  has_many :ceu_certificates, through: :ceus
-  has_many :certificates, through: :ceus
+  has_many :notes
+  has_many :ceus, through: :notes
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

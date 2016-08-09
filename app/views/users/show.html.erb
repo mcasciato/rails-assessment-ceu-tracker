@@ -19,7 +19,8 @@
       <th>Date</th>
       <th>Location</th>
       <th>Duration</th>
-      <th>Certificate Type</th>
+      <th>Certificate Classification</th>
+      <th>Options:</th>
     </tr>
   </thead>
   <tbody>
@@ -42,8 +43,15 @@
             <%= ceu.duration %>
         </td>
         <td>
-          Insert certficate type...?
-        </td>      </tr>
-      <% end %>
+            <% ceu.certificates.each do |certificate| %>
+            <%= certificate.classification %>
+            <% end %>
+          <!-- how to display certificate classification? -->
+        </td>
+        <% end %>
+        <td>
+        
+        </td>
+      </tr>
   </tbody>
 </table>

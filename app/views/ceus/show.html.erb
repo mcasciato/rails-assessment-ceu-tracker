@@ -1,0 +1,8 @@
+<h2><%= @ceu.title %></h2>
+<p>
+  location: <%= @ceu.location %>
+</p>
+Certificate:
+  <% @ceu.certificates.each do |certificate| %>
+    <%= certificate.classification %>
+  <% end %>

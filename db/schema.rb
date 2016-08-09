@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160808184804) do
+ActiveRecord::Schema.define(version: 20160808221136) do
 
   create_table "certificates", force: :cascade do |t|
     t.string   "classification"
-    t.integer  "ceu_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -23,20 +22,32 @@ ActiveRecord::Schema.define(version: 20160808184804) do
   create_table "ceu_certificates", force: :cascade do |t|
     t.integer  "ceu_id"
     t.integer  "certificate_id"
-    t.boolean  "completed",      default: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
+
+  add_index "ceu_certificates", ["certificate_id"], name: "index_ceu_certificates_on_certificate_id"
+  add_index "ceu_certificates", ["ceu_id"], name: "index_ceu_certificates_on_ceu_id"
 
   create_table "ceus", force: :cascade do |t|
     t.string   "title"
     t.date     "date"
     t.integer  "duration"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "location"
   end
+
+  create_table "notes", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "ceu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "notes", ["ceu_id"], name: "index_notes_on_ceu_id"
+  add_index "notes", ["user_id"], name: "index_notes_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
