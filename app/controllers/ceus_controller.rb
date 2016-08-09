@@ -9,7 +9,8 @@ class CeusController < ApplicationController
 
   def show
     if params[:user_id]
-      @ceu = Ceu.find(params[:id])
+      @user = User.find_by(id: params[:user_id])
+      @ceu = @user.ceus.find(id: params[:id])
     else
       @ceu = Ceu.find(params[:id])
     end
@@ -23,6 +24,11 @@ class CeusController < ApplicationController
   def create
     @ceu = current_user.ceus.create(ceu_params)
     redirect_to user_path(current_user)
+  end
+
+  def edit
+    @user = User.find_by(id: params[:user_id])
+    @ceu = Ceu.find(params[:id])
   end
 
   private
