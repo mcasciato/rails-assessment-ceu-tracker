@@ -1,16 +1,15 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-    # def edit
-    #     authorize @user
-    # end
-    #
-    # def update
-    #     authorize @user
-    #     if @user.update(account_update_params)
-    #         redirect_to user_path(@user), notice: 'User updated'
-    #     else
-    #         redirect_to users_path, alert: 'Unable to update user'
-    #     end
-    # end
+    def edit
+        @user = current_user
+    end
+
+    def update
+        if @user.update(account_update_params)
+            redirect_to user_path(@user), notice: 'User updated'
+        else
+            redirect_to user_path(@user), alert: 'Unable to update user'
+        end
+    end
 
     private
 
@@ -19,6 +18,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     def account_update_params
-        params.require(:user).permit(:name, :occupation, :email, :password, :password_confirmation, :current_password)
+        params.require(:user).permit(:name, :occupation, :email, :password, :password_confirmation, :current_password == :encrypted_password)
     end
 end
