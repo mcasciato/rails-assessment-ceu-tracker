@@ -22,8 +22,9 @@ class CeusController < ApplicationController
   end
 
   def create
-    @ceu = current_user.ceus.new(ceu_params)
-    @ceu.certificate = Certificate.create
+    @ceu = current_user.ceus.create(ceu_params)
+    @certificate = Certificate.new(classification: params[:certificate][:classification], ceu_id: @ceu.id)
+    @ceu.certificate = @certificate
     binding.pry
     @ceu.save
     redirect_to user_path(current_user)
@@ -58,6 +59,6 @@ class CeusController < ApplicationController
   private
 
   def ceu_params
-    params.require(:ceu).permit(:title, :date, :duration, :location, :certificate_ids => [], certificate_attributes: [:classification])
+    params.require(:ceu).permit(:title, :date, :duration, :location, certificate_attributes: [:classification, :ceu_id])
   end
 end

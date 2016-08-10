@@ -5,12 +5,31 @@ class Ceu < ActiveRecord::Base
 
     validates :title, :date, :location, :duration, presence: true
 
-    # accepts_nested_attributes_for :certificates, reject_if: :all_blank
+    accepts_nested_attributes_for :certificate, reject_if: :all_blank
+
+
 
     def certificate_attributes=(certificate_attributes)
-      certificate_attributes.values.each do |certificate_attribute|
-        certficate = Certificate.find_or_create_by(certificate_attribute)
-        self.certificates << certficate
+      certificate_attributes.each do |certificate_attribute|
+        certficate = Certificate.create(certificate_attribute)
+        self.certificate << certficate
       end
     end
-end
+
+    # def create_new_certificate
+    #   Certificiate.find_or_create_by(name: users_params[:create_new_certificate])
+    # end
+
+    def add_new_certificate(params)
+      new_certificate = params[:certificate]
+        Certificate.create(ceu_id: self.id, user_id: self.id, name: new_certificate)
+    end
+
+    def associate_certificate_to_ceu(params)
+      if params[:certificate_ids]
+        params[:certificate_ids].each do |x|
+          Certificate.create(ceu_id: self.id, user_id: self.id, name: Certificate.find_by_id(x).name)
+        end
+      end
+    end
+  end

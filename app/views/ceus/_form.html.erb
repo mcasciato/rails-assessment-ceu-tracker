@@ -22,10 +22,10 @@
 </div>
 <br>
 <div class="field">
-  <span class="field">Certificate Type: <em>(Enter State or National)</em></span>
+  <span class="field"><i class="fa fa-trophy"></i> Certificate Type: <em>(Enter State or National)</em></span>
   <br>
-  <%= f.fields_for :certificates do |c| %>
-    <span class="field"><i class="fa fa-trophy"> </i> <%= c.text_field :classification %>
+  <%= fields_for :certificate, Certificate.new do |certificate_fields| %>
+    <%= certificate_fields.text_field :classification %>
   <% end %>
 </div>
 <br>
