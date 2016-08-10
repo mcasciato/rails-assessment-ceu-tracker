@@ -18,6 +18,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     def account_update_params
-        params.require(:user).permit(:name, :occupation, :email, :password, :password_confirmation, :current_password == :encrypted_password)
+        params.require(:user).permit(:name, :occupation, :email, :password, :password_confirmation, :current_password)
     end
 end
