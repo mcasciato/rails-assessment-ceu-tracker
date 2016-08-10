@@ -25,7 +25,6 @@ class CeusController < ApplicationController
     @ceu = current_user.ceus.create(ceu_params)
     @certificate = Certificate.new(classification: params[:certificate][:classification], ceu_id: @ceu.id)
     @ceu.certificate = @certificate
-    binding.pry
     @ceu.save
     redirect_to user_path(current_user)
   end

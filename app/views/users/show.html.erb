@@ -33,16 +33,16 @@
             <%= link_to ceu.title, ceu_path(ceu) %> <!-- won't link -->
         </td>
         <td>
-            <%= ceu.date %>
+            <%= ceu.date.strftime("%m/%d/%Y") %>
         </td>
         <td>
             <%= ceu.location %>
         </td>
         <td>
-            <%= ceu.duration %>
+            <%= ceu.duration %> minutes
         </td>
         <td>
-            <%= ceu.certificate %>
+            <%= ceu.certificate.classification %>
           <!-- how to display certificate classification? -->
         </td>
         <% end %>
