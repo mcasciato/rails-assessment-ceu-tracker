@@ -1,23 +1,23 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-    def edit
-        @user = current_user
-    end
+  before_action :authenticate_user!
 
-    def update
-        if @user.update(account_update_params)
-            redirect_to user_path(@user), notice: 'User updated'
-        else
-            redirect_to user_path(@user), alert: 'Unable to update user'
-        end
-    end
+  def edit
+    @user = current_user
+  end
 
-    private
-
-    def sign_up_params
-        params.require(:user).permit(:name, :occupation, :email, :password, :password_confirmation)
+  def update_password
+    @user = User.find(current_user.id)
+    if @user.update_with_password(user_params)
+      sign_in @user, :bypass => true
+      redirect_to root_path
+    else
+      render "edit"
     end
+  end
 
-    def account_update_params
-        params.require(:user).permit(:name, :occupation, :email, :password, :password_confirmation, :current_password)
-    end
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :occupation, :email, :password, :password_confirmation, :current_password)
+  end
 end
