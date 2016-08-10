@@ -24,7 +24,7 @@
   </thead>
   <tbody>
     <tbody>
-      <% current_user.ceus.each do |ceu| %>
+      <% current_user.ceus.uniq.each do |ceu| %>
       <tr>
         <td>
             <%= ceu.id %>
