@@ -7,21 +7,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update
     @user = User.find(current_user.id)
-    if @user.update_with_password(update_params)
-      sign_in @user, :bypass => true
-      redirect_to user_path(current_user), notice: 'User updated'
+    email_changed = @user.email != params[:user][:email]
+    is_facebook_account = !@user.provider.blank?
+    successfully_updated = if !is_facebook_account
+      @user.update_with_password(update_params_with_password)
     else
-      render "edit", alert: 'Unable to update user'
+      @user.update_without_password(update_params_without_password)
+    end
+    if successfully_updated
+      sign_in @user, :bypass => true
+      redirect_to user_path(current_user)
+    else
+      render "edit"
     end
   end
 
   private
 
-  # def sign_up_params
-  #     params.require(:user).permit(:name, :occupation, :email, :password, :password_confirmation)
-  # end
-
-  def update_params
+  def update_params_with_password
     params.require(:user).permit(:name, :occupation, :email, :password, :password_confirmation, :current_password)
+  end
+
+  def update_params_without_password
+    params.require(:user).permit(:name, :occupation, :email, :password, :password_confirmation)
   end
 end
