@@ -1,5 +1,5 @@
 <div class="card card-block">
-  <h4 class="card-title">Add a Note:</h4>
+  <h4 class="display-4">Add a Note:</h4>
   <p class="card-text"><%= form_for @ceu.notes.build do |f| %>
     <%= f.hidden_field :ceu_id %>
     <%= f.text_area :content, size: "30x6" %><p>
