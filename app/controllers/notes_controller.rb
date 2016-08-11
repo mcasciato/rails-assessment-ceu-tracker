@@ -13,7 +13,7 @@ class NotesController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   private

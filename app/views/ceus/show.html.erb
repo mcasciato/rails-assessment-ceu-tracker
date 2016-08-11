@@ -1,32 +1,17 @@
 <div class="container">
-  <h2><%= @ceu.title %></h2>
+  <h1 class="display-4"><%= @ceu.title %></h1>
     <p>Location: <%= @ceu.location %></p>
     <p>Date: <%= @ceu.date.strftime("%m/%d/%Y") %></p>
     <p>Duration: <%= @ceu.duration %> minutes</p>
     <p>Certificate: <%= @ceu.certificate.classification %></p>
 
     <br>
-    <h4>Add a Note:</h4>
+    <h1 class="display-4">Add a Note:</h1>
     <%= render 'notes/form' %>
     <br><br>
 
-    <h4>All Notes:</h4>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Content</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @ceu.notes.uniq.each do |note| %>
-        <tr>
-          <td><%= note.id %></td>
-          <td><%= note.content %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <h1 class="display-4">All Notes:</h1>
+      <%= render 'notes/notes' %>
     <br><br>
       <%= link_to "Edit CEU", edit_ceu_path(@ceu), class: 'btn btn-warning' %>
       <br><br>
