@@ -12,9 +12,17 @@ class NotesController < ApplicationController
     redirect_to note.ceu
   end
 
-  def edit
-
-  end
+  # def edit
+  #
+  # end
+  #
+  # def update
+  #
+  # end
+  #
+  # def destroy
+  #
+  # end
 
   private
 

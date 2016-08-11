@@ -9,8 +9,8 @@
     <li class="list-group-item list-group-item-action">Certificate: <%= @ceu.certificate.classification %></li>
   </ul>
   <div class="card-block">
-    <%= link_to "Edit CEU", edit_ceu_path(@ceu), class: 'btn btn-warning' %>
-    <%= link_to "Delete CEU", @ceu, method: :delete, class: 'btn btn-danger' %>
-    <%= link_to "Back", user_path(current_user), class: 'btn btn-info' %>
+    <%= link_to "Edit CEU", edit_ceu_path(@ceu), class: 'btn btn-outline-warning' %>
+    <%= link_to "Delete CEU", @ceu, method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Back", user_path(current_user), class: 'btn btn-outline-info' %>
   </div>
 </div>

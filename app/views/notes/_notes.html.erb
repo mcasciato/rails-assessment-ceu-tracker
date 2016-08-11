@@ -6,7 +6,7 @@
   <li class="list-group-item list-group-item-action">
     <p class="lead"><%= note.content %></p>
     <p class="list-group-item-text text-muted"><small><%= note.created_at%></small></p>
-    <p class="list-group-item-text">link to edit | link to delete</p>
+    <p class="list-group-item-text">link to edit | <%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' } %> </p>
   </li>
   <% end %>
 </div>
