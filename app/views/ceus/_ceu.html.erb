@@ -3,10 +3,10 @@
     <h4 class="display-4"><%= @ceu.title %></h4>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Location: <%= @ceu.location %></li>
-    <li class="list-group-item">Date: <%= @ceu.date.strftime("%m/%d/%Y") %></li>
-    <li class="list-group-item">Duration: <%= @ceu.duration %> minutes</li>
-    <li class="list-group-item">Certificate: <%= @ceu.certificate.classification %></li>
+    <li class="list-group-item list-group-item-action">Location: <%= @ceu.location %></li>
+    <li class="list-group-item list-group-item-action">Date: <%= @ceu.date.strftime("%m/%d/%Y") %></li>
+    <li class="list-group-item list-group-item-action">Duration: <%= @ceu.duration %> minutes</li>
+    <li class="list-group-item list-group-item-action">Certificate: <%= @ceu.certificate.classification %></li>
   </ul>
   <div class="card-block">
     <%= link_to "Edit CEU", edit_ceu_path(@ceu), class: 'btn btn-warning' %>
