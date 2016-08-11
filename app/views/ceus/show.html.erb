@@ -1,20 +1,11 @@
 <div class="container">
-  <div class="col-sm-6">
+  <div class="col-sm-7">
     <%= render 'ceu' %>
-    <%= link_to "Edit CEU", edit_ceu_path(@ceu), class: 'btn btn-warning' %>
-    <br><br>
-    <%= form_tag ceu_path(@ceu), method: "delete" %>
-      <%= submit_tag "Delete CEU", class: 'btn btn-danger' %>
-    <br><br>
-    <%= link_to "Back", user_path(current_user), class: 'btn btn-info' %>
   </div>
   <div class="col-sm-6">
-    <h1 class="display-4">Add a Note:</h1>
     <%= render 'notes/form' %>
   </div>
   <div class="col-sm-6">
-    <br>
-    <h1 class="display-4">All Notes:</h1>
-      <%= render 'notes/notes' %>
+    <%= render 'notes/notes' %>
   </div>
 </div>
