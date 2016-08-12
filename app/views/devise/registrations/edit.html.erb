@@ -36,9 +36,9 @@
   </div>
   <br>
   <div class="field">
-    <%= f.label :current_password %> <br />
+    <%= f.label :current_password %><strong> (We need your current password to confirm your changes.)</strong> <br />
     <span><i class="fa fa-key"></i></span>
-    <%= f.password_field :current_password, autocomplete: "off" %><i> *We need your current password to confirm your changes.</i>
+    <%= f.password_field :current_password, autocomplete: "off" %><i> *If you signed up via Facebook, you <strong>DO NOT</strong> have to enter your current password.</i>
   </div>
   <br>
   <div class="actions">
