@@ -1,12 +1,12 @@
 <div class="list-group">
   <li class="list-group-item list-group-item-action active">
-    <h1 class="display-4 list-group-item-heading">All Notes:</h1>
+    <h1 class="display-4 list-group-item-heading">Notes:</h1>
   </li>
   <% @ceu.notes.uniq.each do |note| %>
   <li class="list-group-item list-group-item-action">
     <p class="lead"><%= note.content %></p>
-    <p class="list-group-item-text text-muted"><small><%= note.created_at%></small></p>
-    <p class="list-group-item-text">link to edit | <%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+    <p class="list-group-item-text text-muted"><small><%= note.created_at %></small></p>
+    <p class="list-group-item-text">link to edit | link to delete </p>
   </li>
   <% end %>
 </div>
