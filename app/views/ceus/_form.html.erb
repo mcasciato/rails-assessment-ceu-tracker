@@ -22,10 +22,9 @@
 </div>
 <br>
 <div class="field">
-  <span class="field"><i class="fa fa-trophy"></i> Certificate Type: <em>(Enter State or National)</em></span>
-  <br>
+  <span class="field"><i class="fa fa-trophy"></i> Certificate Type:</span>
   <%= fields_for :certificate, Certificate.new do |certificate_fields| %>
-    <%= certificate_fields.text_field :classification %>
+    <%= certificate_fields.select :classification, options_for_select(["State", "National"]) %>
   <% end %>
 </div>
 <br>

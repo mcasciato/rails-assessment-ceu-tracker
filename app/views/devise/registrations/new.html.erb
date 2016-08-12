@@ -10,7 +10,7 @@
   <br>
   <div class="field">
       <span><i class="fa fa-briefcase"></i></span>
-      <%= f.text_field :occupation, placeholder: "Occupation" %>
+      <%= f.select :occupation, options_for_select(["Occupational Therapist", "Physical Therapist"] %>
   </div>
   <br>
   <div class="field">
