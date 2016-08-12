@@ -1,0 +1,36 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Duration</th>
+      <th>Certificate Classification</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% current_user.ceus.uniq.each do |ceu| %>
+      <tr>
+        <td>
+            <%= ceu.id %>
+        </td>
+        <td>
+            <%= link_to ceu.title, ceu_path(ceu) %> <!-- won't link -->
+        </td>
+        <td>
+            <%= ceu.date.strftime("%m/%d/%Y") %>
+        </td>
+        <td>
+            <%= ceu.location %>
+        </td>
+        <td>
+            <%= ceu.duration %> minutes
+        </td>
+        <td>
+            <%= ceu.certificate.classification %>
+        </td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>

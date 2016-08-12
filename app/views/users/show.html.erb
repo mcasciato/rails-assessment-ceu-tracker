@@ -1,50 +1,13 @@
-<h1>Hello <%= current_user.name %>!</h1>
+<h1 class="display-4">Hello, <%= current_user.name %>!</h1>
 <br>
 <h3>Your Information:</h3>
 
-<p class="lead">Occupation: <%= current_user.occupation %></p>
-<p class="lead">Email: <%= current_user.email %></p>
+<p><strong>Occupation:</strong> <%= current_user.occupation %></p>
+<p><strong>Email:</strong> <%= current_user.email %></p>
 
 <%= link_to "Edit User", edit_user_registration_path(current_user), class: 'btn btn-outline-warning' %>
 
 <br><br><br>
 
-<h2>Your CEUs:</h2>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Location</th>
-      <th>Duration</th>
-      <th>Certificate Classification</th>
-    </tr>
-  </thead>
-  <tbody>
-      <% current_user.ceus.uniq.each do |ceu| %>
-      <tr>
-        <td>
-            <%= ceu.id %>
-        </td>
-        <td>
-            <%= link_to ceu.title, ceu_path(ceu) %> <!-- won't link -->
-        </td>
-        <td>
-            <%= ceu.date.strftime("%m/%d/%Y") %>
-        </td>
-        <td>
-            <%= ceu.location %>
-        </td>
-        <td>
-            <%= ceu.duration %> minutes
-        </td>
-        <td>
-            <%= ceu.certificate.classification %>
-          <!-- how to display certificate classification? -->
-        </td>
-        <% end %>
-      </tr>
-  </tbody>
-</table>
+<h1 class="display-4">Your CEUs:</h1>
+<%= render 'userceus' %>

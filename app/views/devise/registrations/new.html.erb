@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h1 class="display-4">Sign up</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -10,7 +10,7 @@
   <br>
   <div class="field">
       <span><i class="fa fa-briefcase"></i></span>
-      <%= f.select :occupation, options_for_select(["Occupational Therapist", "Physical Therapist"] %>
+      <%= f.select :occupation, options_for_select(["Occupational Therapist (OT)", "Physical Therapist (PT)", "Recreation Therapist (TR)"]) %>
   </div>
   <br>
   <div class="field">
