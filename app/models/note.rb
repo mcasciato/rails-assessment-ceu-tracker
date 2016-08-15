@@ -4,5 +4,4 @@ class Note < ActiveRecord::Base
 
   accepts_nested_attributes_for :user, reject_if: :all_blank
 
-  validates :content, presence: true
 end
