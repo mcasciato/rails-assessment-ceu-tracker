@@ -7,7 +7,9 @@ class Ceu < ActiveRecord::Base
 
     accepts_nested_attributes_for :certificate, reject_if: :all_blank
 
-
+    def self.most_recent
+      order(date: :desc)
+    end
 
     def certificate_attributes=(certificate_attributes)
       certificate_attributes.each do |certificate_attribute|
