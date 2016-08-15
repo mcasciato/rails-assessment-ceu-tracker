@@ -16,6 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     if successfully_updated
       sign_in @user, :bypass => true
+      set_flash_message(:success, :updated) if is_navigational_format?
       redirect_to user_path(current_user)
     else
       render "edit"
