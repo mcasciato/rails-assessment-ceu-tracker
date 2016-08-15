@@ -5,9 +5,9 @@
     </tr>
   </thead>
   <tbody>
-      <% @ceu.notes.each do |note| %>
+      <% @ceu.notes.uniq.each do |note| %>
       <tr>
-        <td>
+        <td class="lead">
             <%= note.content %>
         </td>
         <% end %>
