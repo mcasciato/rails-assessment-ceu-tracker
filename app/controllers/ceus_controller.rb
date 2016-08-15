@@ -25,9 +25,13 @@ class CeusController < ApplicationController
     @ceu = current_user.ceus.create(ceu_params)
     @certificate = Certificate.new(classification: params[:certificate][:classification], ceu_id: @ceu.id)
     @ceu.certificate = @certificate
-    @ceu.save
-    flash[:success] = "CEU successfully created!"
-    redirect_to user_path(current_user)
+    if @ceu.save
+      flash[:success] = "CEU successfully created!"
+      redirect_to user_path(current_user)
+    else
+      flash[:error] = "Please fill in all fields."
+      render :new
+    end
   end
 
   def edit
@@ -44,7 +48,7 @@ class CeusController < ApplicationController
     @ceu = Ceu.find(params[:id])
     @ceu.update(ceu_params)
     if @ceu.save
-      flash[:sucess] = "CEU successfully updated."
+      flash[:success] = "CEU successfully updated."
       redirect_to @ceu
     else
       render :edit

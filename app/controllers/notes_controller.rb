@@ -5,9 +5,13 @@ class NotesController < ApplicationController
   def create
     note = Note.new(note_params)
     note.user_id = current_user.id
-    note.save
-    flash[:success] = "Note successfully created!"
-    redirect_to note.ceu
+    if note.save
+      flash[:success] = "Note successfully created!"
+      redirect_to note.ceu
+    else
+      flash[:error] = "Please enter content for the note."
+      redirect_to note.ceu
+    end
   end
 
   # def show
