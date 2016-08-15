@@ -26,6 +26,7 @@ class CeusController < ApplicationController
     @certificate = Certificate.new(classification: params[:certificate][:classification], ceu_id: @ceu.id)
     @ceu.certificate = @certificate
     @ceu.save
+    flash[:success] = "CEU successfully created!"
     redirect_to user_path(current_user)
   end
 
@@ -52,6 +53,7 @@ class CeusController < ApplicationController
   def destroy
     @ceu = current_user.ceus.find_by(id: params[:id])
     @ceu.destroy
+    flash[:error] = "CEU successfully deleted."
     redirect_to user_path(current_user)
   end
 

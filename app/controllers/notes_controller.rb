@@ -6,6 +6,7 @@ class NotesController < ApplicationController
     note = Note.new(note_params)
     note.user_id = current_user.id
     note.save
+    flash[:success] = "Note successfully created!"
     redirect_to note.ceu
   end
 
