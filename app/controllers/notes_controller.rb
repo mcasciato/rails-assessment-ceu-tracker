@@ -1,9 +1,6 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [:show, :edit, :update, :destroy]
+  # before_action :set_note, only: [:show, :edit, :update, :destroy]
 
-
-  def show
-  end
 
   def create
     note = Note.new(note_params)
@@ -12,9 +9,15 @@ class NotesController < ApplicationController
     redirect_to note.ceu
   end
 
+  # def show
+  #
+  # end
+  #
   # def edit
   #
   # end
+  #
+  # ** ADD THESE LATER **
   #
   # def update
   #
@@ -29,9 +32,9 @@ class NotesController < ApplicationController
   def note_params
     params.require(:note).permit(:content, :ceu_id, :user_id)
   end
-
-  def set_note
-    @note = Note.find(params[:id])
-  end
+  #
+  # def set_note
+  #   @note = Note.find(params[:id])
+  # end
 
 end
