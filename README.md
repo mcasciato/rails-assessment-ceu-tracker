@@ -1,24 +1,23 @@
-# README
+# MyCEUs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails app for healthcare professionals to log their CEUs (Continuing Education Units). Created for my Rails Assessment with [Learn.co](https://learn.co/with/mcasciato).
 
-Things you may want to cover:
+## Initial Setup
+(Follow these instructions if you want to run this locally)
+- `rails new rails-assessment-ceu-tracker`
+- `git init`
+- `git add .`
+- `git commit`
+- `git remote add origin git@github.com:mcasciato/rails-assessment-ceu-tracker.git`
+- `git push -u origin master`
 
-* Ruby version
+## Features
+- Users can signup/login manually or via Facebook (omniauth).
+  - Users can edit their accounts: password not needed for updates if logged in via Facebook.
+- Users can create/edit/delete a CEU, viewable only to them.
+- Users can create a note on a CEU for their reference.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Walkthrough
+Check out a brief walkthrough of the features [here]() over on YouTube.
+***
+For more info on my development process, check out my blog post [here](https://medium.com/@mcasciato/myceus-c39ecba55489#.76pau7gav) over on Medium.
