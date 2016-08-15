@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table table-hover">
   <thead class="thead-default">
     <tr>
       <th>Title</th>
@@ -9,7 +9,7 @@
       <% current_user.ceus.most_recent.each do |ceu| %>
       <tr>
         <td>
-            <%= link_to ceu.title, ceu_path(ceu) %> <!-- won't link -->
+            <%= link_to ceu.title, ceu_path(ceu) %> 
         </td>
         <td>
             <%= ceu.date.strftime("%m/%d/%Y") %>

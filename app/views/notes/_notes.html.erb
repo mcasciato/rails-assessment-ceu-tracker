@@ -1,12 +1,16 @@
-<div class="list-group">
-  <li class="list-group-item list-group-item-action active">
-    <h1 class="display-4 list-group-item-heading">Notes:</h1>
-  </li>
-  <% @ceu.notes.uniq.each do |note| %>
-  <li class="list-group-item list-group-item-action">
-    <p class="lead"><%= note.content %></p>
-    <p class="list-group-item-text text-muted"><small><%= note.created_at %></small></p>
-    <p class="list-group-item-text">link to edit | link to delete </p>
-  </li>
-  <% end %>
-</div>
+<table class="table table-hover">
+  <thead class="thead childrens-9">
+    <tr>
+      <th class="display-4">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @ceu.notes.each do |note| %>
+      <tr>
+        <td>
+            <%= note.content %>
+        </td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
