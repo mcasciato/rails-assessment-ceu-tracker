@@ -10,7 +10,7 @@ class NotesController < ApplicationController
   end
 
   def edit
-    @note = Note.find_by(id: params[:id])
+    @note = Note.find_by(params[:id])
   end
 
   def update
@@ -20,6 +20,13 @@ class NotesController < ApplicationController
     flash[:success] = "Note successfully updated."
     redirect_to user_path(current_user)
   end
+
+  # def destroy
+  #   @note = Note.find(params[:id])
+  #   @note.destroy
+  #   flash[:error] = "Note successfully deleted."
+  #   redirect_to user_path(current_user)
+  # end
 
   private
 
