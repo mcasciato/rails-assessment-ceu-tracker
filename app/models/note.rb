@@ -4,4 +4,7 @@ class Note < ActiveRecord::Base
 
   accepts_nested_attributes_for :user, reject_if: :all_blank
 
+  def self.most_recent
+    order(created_at: :desc)
+  end
 end

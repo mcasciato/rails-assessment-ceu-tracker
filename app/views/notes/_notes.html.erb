@@ -5,7 +5,7 @@
     </tr>
   </thead>
   <tbody>
-      <% @ceu.notes.uniq.each do |note| %>
+      <% @ceu.notes.most_recent.uniq.each do |note| %>
       <tr>
         <td class="lead">
             <%= note.content %>
