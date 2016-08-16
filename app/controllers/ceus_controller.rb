@@ -10,7 +10,7 @@ class CeusController < ApplicationController
   def show
     if params[:user_id]
       current_user = User.find_by(id: params[:user_id])
-      @ceu = current_user.ceus.find(id: params[:id])
+      @ceu = current_user.ceus.find(params[:id])
     else
       @ceu = Ceu.find(params[:id])
     end

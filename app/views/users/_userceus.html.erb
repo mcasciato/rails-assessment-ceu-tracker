@@ -9,7 +9,7 @@
       <% current_user.ceus.most_recent.uniq.each do |ceu| %>
       <tr>
         <td class="lead">
-            <%= link_to ceu.title, ceu_path(ceu) %>
+            <%= link_to ceu.title, user_ceu_path(current_user, ceu) %>
         </td>
         <td class="lead">
             <%= ceu.date.strftime("%m/%d/%Y") %>
