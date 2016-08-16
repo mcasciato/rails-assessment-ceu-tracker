@@ -11,6 +11,7 @@ class CeusController < ApplicationController
     if params[:user_id]
       current_user = User.find_by(id: params[:user_id])
       @ceu = current_user.ceus.find(params[:id])
+      @note = @ceu.notes.build
     else
       @ceu = Ceu.find(params[:id])
     end
