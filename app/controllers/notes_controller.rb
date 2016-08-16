@@ -21,7 +21,7 @@ class NotesController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  # def destroy
+  # def destroy -- add this later
   #   @note = Note.find(params[:id])
   #   @note.destroy
   #   flash[:error] = "Note successfully deleted."
