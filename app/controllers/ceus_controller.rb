@@ -39,7 +39,7 @@ class CeusController < ApplicationController
     if params[:user_id]
       current_user = User.find_by(id: params[:user_id])
       @ceu = current_user.ceus.find_by(id: params[:id])
-      redirect_to user_ceu_path(@ceu.id)
+      render :edit
     else
       @ceu = Ceu.find(params[:id])
     end
@@ -50,7 +50,7 @@ class CeusController < ApplicationController
     @ceu.update(ceu_params)
     if @ceu.save
       flash[:success] = "CEU successfully updated."
-      redirect_to @ceu
+      redirect_to user_ceu_path
     else
       render :edit
     end

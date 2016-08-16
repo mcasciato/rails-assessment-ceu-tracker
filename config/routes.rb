@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resources :ceus, only: [:new, :create, :show, :edit, :update, :destroy]
   end
   # resources :ceus, only: [:show, :create, :edit, :update, :destroy]
-  resources :notes
+  resources :notes, only: [:create, :edit, :update, :destroy] 
 
 end
