@@ -4,9 +4,13 @@ class NotesController < ApplicationController
     @ceu = current_user.ceus.find_by(id: params[:id])
     @note = Note.new(note_params)
     @note.user_id = current_user.id
-    @note.save
-    flash[:success] = "Note successfully created!"
-    redirect_to user_path(current_user)
+    if @note.save
+      flash[:success] = "Note successfully created!"
+      redirect_to user_path(current_user)
+    else
+      flash[:error] = "Your note must have content"
+      redirect_to user_path(current_user)
+    end
   end
 
   def edit
