@@ -28,7 +28,7 @@ class CeusController < ApplicationController
     @ceu.certificate = @certificate
     if @ceu.save
       flash[:success] = "CEU successfully created!"
-      redirect_to user_path(current_user)
+      redirect_to user_ceus_path(current_user)
     else
       flash[:error] = "Please fill in all fields."
       render :new

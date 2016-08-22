@@ -1,8 +1,8 @@
 class NotesController < ApplicationController
 
   def index
-    if params[:user_id]
-      @notes = User.find(params[:user_id]).notes
+    if params[:ceu_id]
+      @notes = Ceu.find(params[:ceu_id]).notes
     else
       @notes = Note.all
     end
@@ -14,7 +14,7 @@ class NotesController < ApplicationController
     @note.user_id = current_user.id
     if @note.save
       flash[:success] = "Note successfully created!"
-      redirect_to user_path(current_user)
+      redirect_to user_ceu_path(@note.user_id, @note.ceu_id)
     else
       flash[:error] = "Your note must have content"
       redirect_to user_path(current_user)
@@ -22,13 +22,14 @@ class NotesController < ApplicationController
   end
 
   def edit
-    if params[:user_id]
-      current_user = User.find_by(id: params[:user_id])
+    if params[:ceu_id]
+      ceu = current_user.ceus.find_by(id: params[:id])
       @note = current_user.notes.find_by(id: params[:id])
       render :edit
     else
       @note = Note.find(params[:id])
-    end  end
+    end
+  end
 
   def update
     @note = Note.find(params[:id])

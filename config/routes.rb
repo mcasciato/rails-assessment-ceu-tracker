@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :ceus
   end
-  # resources :ceus, only: [:show, :create, :edit, :update, :destroy]
-  resources :notes, only: [:index, :create, :edit, :update, :destroy]
+  resources :ceus do
+    resources :notes, only: [:index, :create, :edit, :update, :destroy]
+  end
 
 end

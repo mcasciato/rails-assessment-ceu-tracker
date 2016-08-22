@@ -8,7 +8,7 @@
         <h4 class="display-4 modal-title" id="myModalLabel">Add a Note:</h4>
       </div>
         <div class="modal-body">
-          <%= form_for @note do |f| %>
+          <%= form_for [@ceu, @note] do |f| %>
           <%= f.hidden_field :ceu_id %>
           <%= f.text_area :content, size: "67x6" %>
         </div>

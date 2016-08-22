@@ -5,7 +5,7 @@
     </tr>
   </thead>
   <tbody>
-      <% @notes.most_recent.uniq.each do |note| %>
+      <% current_user.notes.most_recent.uniq.each do |note| %>
       <tr>
         <td class="lead">
             <%= link_to note.content, edit_note_path(note) %>
