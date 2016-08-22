@@ -10,8 +10,13 @@ class NotesController < ApplicationController
   end
 
   def edit
-    @note = Note.find_by(id: params[:id])
-  end
+    if params[:user_id]
+      current_user = User.find_by(id: params[:user_id])
+      @note = current_user.notes.find_by(id: params[:id])
+      render :edit
+    else
+      @note = Note.find(params[:id])
+    end  end
 
   def update
     @note = Note.find(params[:id])
