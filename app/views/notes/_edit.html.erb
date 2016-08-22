@@ -1,4 +1,4 @@
-<%= form_for @note do |f| %>
+<%= form_for [@note.ceu, @note]  do |f| %>
 <%= f.hidden_field :ceu_id %>
 
 <div class="field">
@@ -10,6 +10,6 @@
 </div>
 <% end %>
 <br>
-<%= link_to "Delete Note", note_path, method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' } %>
+<%= link_to "Delete Note", ceu_note_path, method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' } %>
 <br><br>
 <%= link_to "Back", :back, class: 'btn btn-outline-info' %>

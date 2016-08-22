@@ -8,7 +8,7 @@
       <% @ceu.notes.most_recent.uniq.each do |note| %>
       <tr>
         <td class="lead">
-            <%= note.content %>
+            <%= link_to note.content, ceu_note_path(@note.ceu_id, note) %>
         </td>
         <% end %>
       </tr>
