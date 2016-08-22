@@ -4,17 +4,17 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <span class="field"><i class="fa fa-user"></i></span>
+    <span class="field"><i class="fa fa-user fa-fw"></i></span>
     <%= f.text_field :name, placeholder: "Name" %>
   </div>
   <br>
   <div class="field">
-      <span><i class="fa fa-briefcase"></i></span>
+      <span><i class="fa fa-briefcase fa-fw"></i></span>
       <%= f.select :occupation, options_for_select(["Occupational Therapist (OT)", "Physical Therapist (PT)", "Recreation Therapist (TR)"]) %>
   </div>
   <br>
   <div class="field">
-    <span><i class="fa fa-envelope"></i></span>
+    <span><i class="fa fa-envelope fa-fw"></i></span>
     <%= f.email_field :email, autofocus: true %>
   </div>
   <br>
@@ -24,20 +24,20 @@
 
   <div class="field">
     <%= f.label :password %> <strong> (Leave blank if you don't want to change it.)</strong><br />
-    <span><i class="fa fa-key"></i></span>
+    <span><i class="fa fa-key fa-fw"></i></span>
     <%= f.password_field :password, autocomplete: "off" %><% if @minimum_password_length %> *<em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
   <br>
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <span><i class="fa fa-key"></i></span>
+    <span><i class="fa fa-key fa-fw"></i></span>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
   <br>
   <div class="field">
     <%= f.label :current_password %><strong> (We need your current password to confirm your changes.)</strong> <br />
-    <span><i class="fa fa-key"></i></span>
+    <span><i class="fa fa-key fa-fw"></i></span>
     <%= f.password_field :current_password, autocomplete: "off" %><i> *If you signed up via Facebook, you <strong>DO NOT</strong> have to enter your current password.</i>
   </div>
   <br>
