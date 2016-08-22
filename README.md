@@ -18,6 +18,6 @@ A Rails app for healthcare professionals to log their CEUs (Continuing Education
 - Users can create a note on a CEU for their reference.
 
 ## Walkthrough
-Check out a brief walkthrough of the features [here]() over on YouTube.
+Check out a brief walkthrough of the features [here](https://www.youtube.com/watch?v=Fujf9OKtXD0) over on YouTube.
 ***
 For more info on my development process, check out my blog post [here](https://medium.com/@mcasciato/myceus-c39ecba55489#.76pau7gav) over on Medium.

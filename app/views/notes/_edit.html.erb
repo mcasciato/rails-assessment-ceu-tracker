@@ -1,0 +1,15 @@
+<%= form_for @note do |f| %>
+<%= f.hidden_field :ceu_id %>
+
+<div class="field">
+  <%= f.text_area :content, size: "67x6" %>
+</div>
+
+<div class="actions">
+  <%= f.submit class: 'btn btn-outline-primary' %>
+</div>
+<% end %>
+<br>
+<%= link_to "Delete Note", note_path, method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' } %>
+<br><br>
+<%= link_to "Back", :back, class: 'btn btn-outline-info' %>
