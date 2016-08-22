@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def last_login
+    last_sign_in_at.localtime.strftime("%m/%d/%Y at %I:%M %p")
+  end
+
 end

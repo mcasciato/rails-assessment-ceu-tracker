@@ -60,7 +60,7 @@ class CeusController < ApplicationController
     @ceu = current_user.ceus.find_by(id: params[:id])
     @ceu.destroy
     flash[:error] = "CEU successfully deleted."
-    redirect_to user_path(current_user)
+    redirect_to user_ceus_path
   end
 
   private
