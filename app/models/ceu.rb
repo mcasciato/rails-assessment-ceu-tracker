@@ -11,6 +11,10 @@ class Ceu < ActiveRecord::Base
       order(date: :desc)
     end
 
+    def last_modified
+      updated_at.localtime.strftime("%m/%d/%Y at %I:%M %p")
+    end
+
     def certificate_attributes=(certificate_attributes)
       certificate_attributes.each do |certificate_attribute|
         certficate = Certificate.create(certificate_attribute)

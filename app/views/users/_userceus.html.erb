@@ -3,17 +3,15 @@
     <tr>
       <th><h4>Title</h4></th>
       <th><h4>Date <small>(most recent first)</small)></h4></th>
+      <th><h4>Last Modified</h4></th>
     </tr>
   </thead>
   <tbody>
       <% current_user.ceus.most_recent.uniq.each do |ceu| %>
       <tr>
-        <td class="lead">
-            <%= link_to ceu.title, user_ceu_path(current_user, ceu) %>
-        </td>
-        <td class="lead">
-            <%= ceu.date.strftime("%m/%d/%Y") %>
-        </td>
+        <td class="lead"><%= link_to ceu.title, user_ceu_path(current_user, ceu) %></td>
+        <td class="lead"><%= ceu.date.strftime("%m/%d/%Y") %></td>
+        <td class="lead"><%= ceu.last_modified %></td>
         <% end %>
       </tr>
   </tbody>
