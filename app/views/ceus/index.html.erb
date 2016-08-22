@@ -1,7 +1,2 @@
-<div class="container">
-    <% @ceus.all.each do |ceu| %>
-    <ul>
-        <li><%= ceu.title %></li>
-    </ul>
-    <% end %>
-</div>
+<h1 class="display-4">Your CEUs:</h1>
+<%= render 'users/userceus' %>

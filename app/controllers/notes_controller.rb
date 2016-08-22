@@ -1,5 +1,13 @@
 class NotesController < ApplicationController
 
+  def index
+    if params[:user_id]
+      @notes = User.find(params[:user_id]).notes
+    else
+      @notes = Note.all
+    end
+  end
+
   def create
     @ceu = current_user.ceus.find_by(id: params[:id])
     @note = Note.new(note_params)

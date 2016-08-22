@@ -6,8 +6,3 @@
 <p><strong>Email:</strong> <%= current_user.email %></p>
 
 <%= link_to "Edit User", edit_user_registration_path(current_user), class: 'btn btn-outline-warning' %>
-
-<br><br><br>
-
-<h1 class="display-4">Your CEUs:</h1>
-<%= render 'userceus' %>

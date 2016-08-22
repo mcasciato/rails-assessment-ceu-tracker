@@ -1,0 +1,16 @@
+<table class="table table-hover">
+  <thead class="thead childrens-9">
+    <tr>
+      <th class="display-4">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @notes.most_recent.uniq.each do |note| %>
+      <tr>
+        <td class="lead">
+            <%= link_to note.content, edit_note_path(note) %>
+        </td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
