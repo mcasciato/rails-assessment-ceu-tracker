@@ -24,4 +24,4 @@ Check out a brief walkthrough of the features [here](https://www.youtube.com/wat
 For more info on my development process, check out my blog post [here](https://medium.com/@mcasciato/myceus-c39ecba55489#.76pau7gav) over on Medium.
 ***
 ## Copyright & License
-(c) 2016 Michael Casciato under the [MIT License](LICENSE)
+(c) 2016 Michael Casciato under the [MIT License](LICENSE.md)
