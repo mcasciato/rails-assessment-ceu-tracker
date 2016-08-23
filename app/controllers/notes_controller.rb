@@ -8,15 +8,6 @@ class NotesController < ApplicationController
     end
   end
 
-  def show
-    if params[:ceu_id]
-      ceu = current_user.ceus.find_by(id: params[:id])
-      @note = current_user.notes.find_by(id: params[:id])
-    else
-      @note = Note.find(params[:id])
-    end
-  end
-
   def create
     @ceu = current_user.ceus.find_by(id: params[:id])
     @note = Note.new(note_params)
@@ -27,6 +18,15 @@ class NotesController < ApplicationController
     else
       flash[:error] = "Your note must have content"
       redirect_to user_ceu_path(@note.user_id, @note.ceu_id)
+    end
+  end
+
+  def show
+    if params[:ceu_id]
+      ceu = current_user.ceus.find_by(id: params[:id])
+      @note = current_user.notes.find_by(id: params[:id])
+    else
+      @note = Note.find(params[:id])
     end
   end
 
