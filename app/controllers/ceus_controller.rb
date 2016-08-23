@@ -24,7 +24,7 @@ class CeusController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     if params[:user_id]
       current_user = User.find_by(id: params[:user_id])

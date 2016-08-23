@@ -3,13 +3,11 @@ class Ceu < ActiveRecord::Base
     has_many :notes
     has_many :users, through: :notes
 
+    scope :most_recent, -> { order(date: :desc) }
+
     validates :title, :date, :location, :duration, presence: true
 
     accepts_nested_attributes_for :certificate, reject_if: :all_blank
-
-    def self.most_recent
-      order(date: :desc)
-    end
 
     def last_modified
       updated_at.localtime.strftime("%m/%d/%Y at %I:%M %p")
@@ -21,10 +19,6 @@ class Ceu < ActiveRecord::Base
         self.certificate << certficate
       end
     end
-
-    # def create_new_certificate
-    #   Certificiate.find_or_create_by(name: users_params[:create_new_certificate])
-    # end
 
     def add_new_certificate(params)
       new_certificate = params[:certificate]
