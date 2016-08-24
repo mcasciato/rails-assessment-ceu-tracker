@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   # after_action :verify_authorized
 
   def index
-
+    if current_user.admin?
+      @users = User.all
+    else
+      redirect_to root_path
+      flash[:error] = "You do not have admin access."
+    end
   end
 
   def new

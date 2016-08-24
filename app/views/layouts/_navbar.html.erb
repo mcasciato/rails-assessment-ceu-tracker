@@ -2,18 +2,21 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <%= link_to root_path, class: 'navbar navbar-brand' do %>
-            <i class="fa fa-heartbeat fa-2x"></i><% end %>
-        </div>
-        <ul class="nav navbar-nav">
-            <% if user_signed_in? %>
-            <li class="nav-item"><%= link_to "My Account", user_path(current_user), class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to "My CEUs", user_ceus_path(current_user), class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to "Log Out", destroy_user_session_path, method: "delete", class: 'nav-link' %>
-            </li>
-        <% else %>
-            <li class="nav-item"><%= link_to "Log In", new_user_session_path, class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: 'nav-link' %></li>
+              <i class="fa fa-heartbeat fa-2x"></i>
             <% end %>
-        </ul>
+        </div>
+          <ul class="nav navbar-nav">
+              <% if user_signed_in? %>
+                <li class="nav-item"><%= link_to "My Account", user_path(current_user), class: 'nav-link' %></li>
+                <li class="nav-item"><%= link_to "My CEUs", user_ceus_path(current_user), class: 'nav-link' %></li>
+                <% if current_user.admin? %>
+                  <li class="nav-item"><%= link_to "All Users", users_path, class: 'nav-link' %></li>
+                <% end %>
+                <li class="nav-item"><%= link_to "Log Out", destroy_user_session_path, method: "delete", class: 'nav-link' %></li>
+                <% else %>
+                  <li class="nav-item"><%= link_to "Log In", new_user_session_path, class: 'nav-link' %></li>
+                  <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: 'nav-link' %></li>
+                <% end %>
+          </ul>
     </div>
 </nav>

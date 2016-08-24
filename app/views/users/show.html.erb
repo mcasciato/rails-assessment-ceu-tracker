@@ -1,9 +1,22 @@
-<h1 class="display-4">Hello, <%= current_user.name %>!</h1>
-<br>
-<h3>Your Information:</h3>
+<% if current_user.admin? %>
+  <h1 class="display-4">Hello, <%= @user.name %>!</h1>
+  <br>
+  <h3>Your Information:</h3>
 
-<p><strong>Occupation:</strong> <%= current_user.occupation %></p>
-<p><strong>Email:</strong> <%= current_user.email %></p>
-<p><strong>Last Login:</strong> <%= current_user.last_login %></p>
+  <p><strong>Occupation:</strong> <%= @user.occupation %></p>
+  <p><strong>Email:</strong> <%= @user.email %></p>
+  <p><strong>Last Login:</strong> <%= @user.last_login %></p>
 
-<%= link_to "Edit User", edit_user_registration_path(current_user), class: 'btn btn-outline-warning' %>
+  <%= link_to "Edit User", edit_user_registration_path(@user), class: 'btn btn-outline-warning' %>
+    <!-- link still goes to  -->
+<% else %>
+  <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
+  <br>
+  <h3>Your Information:</h3>
+
+  <p><strong>Occupation:</strong> <%= current_user.occupation %></p>
+  <p><strong>Email:</strong> <%= current_user.email %></p>
+  <p><strong>Last Login:</strong> <%= current_user.last_login %></p>
+
+  <%= link_to "Edit User", edit_user_registration_path(current_user), class: 'btn btn-outline-warning' %>
+<% end %>
