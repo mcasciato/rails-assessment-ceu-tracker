@@ -12,6 +12,7 @@ class NotesController < ApplicationController
     @ceu = current_user.ceus.find_by(id: params[:id])
     @note = Note.new(note_params)
     @note.user_id = current_user.id
+    @note.ceu_id = params[:ceu_id]
     if @note.save
       flash[:success] = "Note successfully created!"
       redirect_to user_ceu_path(@note.user_id, @note.ceu_id)
