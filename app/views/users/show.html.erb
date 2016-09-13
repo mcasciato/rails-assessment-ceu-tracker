@@ -8,7 +8,12 @@
     <p><strong>Last Login:</strong> <%= @user.last_login %></p>
 
   <%= link_to "Edit User", edit_user_registration_path(@user), class: 'btn btn-outline-warning' %>
-    <!-- link still goes to  -->
+      <br><br>
+  <h3 id="ceus">Your CEUs</h3> <!-- use JS on click on the heading to show all CEUs -->
+    <div id="ceuList"></div>
+      <br><br>
+  <h3 id="users">All Users</h3> <!-- use JS on click on the heading to show all Users (admin only) -->
+    <div id="userList"></div>
 <% else %>
   <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
   <br>
@@ -19,4 +24,7 @@
   <p><strong>Last Login:</strong> <%= current_user.last_login %></p>
 
   <%= link_to "Edit User", edit_user_registration_path(current_user), class: 'btn btn-outline-warning' %>
+      <br><br>
+  <h3 id="ceus">Your CEUs</h3> <!-- use JS on click on the heading to show all CEUs -->
+    <div id="ceuList"></div>
 <% end %>
