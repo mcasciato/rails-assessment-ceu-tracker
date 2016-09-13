@@ -1,3 +1,3 @@
 class CeuSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :title, :date, :location, :duration
 end
