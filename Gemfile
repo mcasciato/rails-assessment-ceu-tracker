@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem "active_model_serializers" 
 gem 'faker'
 gem 'sprockets-rails'
 # Design
