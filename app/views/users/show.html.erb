@@ -10,10 +10,10 @@
   <%= link_to "Edit User", edit_user_registration_path(@user), class: 'btn btn-outline-warning' %>
       <br><br>
   <h3 id="ceus">Your CEUs</h3> <!-- use JS on click on the heading to show all CEUs -->
-    <div id="ceuList"></div>
+    <div id="ceu-list"></div>
       <br><br>
   <h3 id="users">All Users</h3> <!-- use JS on click on the heading to show all Users (admin only) -->
-    <div id="userList"></div>
+    <div id="user-list"></div>
 <% else %>
   <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
   <br>
@@ -26,5 +26,5 @@
   <%= link_to "Edit User", edit_user_registration_path(current_user), class: 'btn btn-outline-warning' %>
       <br><br>
   <h3 id="ceus">Your CEUs</h3> <!-- use JS on click on the heading to show all CEUs -->
-    <div id="ceuList"></div>
+    <div id="ceu-list"></div>
 <% end %>
