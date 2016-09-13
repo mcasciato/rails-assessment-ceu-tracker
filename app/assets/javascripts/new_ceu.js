@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function() {
   submitForm();
 })
 
-function submitForm() {
+function submitForm(){
   $('#new_ceu').submit(function(event){
     event.preventDefault();
     var values = $(this).serialize();
@@ -17,10 +17,17 @@ function submitForm() {
   })
 };
 
-function Ceu(title, date, location, duration, id) {
+function Ceu(title, date, location, duration, id){
   this.title = title;
   this.date = date;
   this.location = location;
   this.duration = duration;
   this.id = id;
 }
+
+Ceu.prototype.createHTML = function(){
+    $('#ceuTitle').text("Title: " + this.title);
+    $('#ceuDate').text("Date: " + this.date);
+    $('#ceuLocation').text("Location: " + this.location);
+    $('#ceuDuration').text("Duration: " + this.duration + " minutes");
+  }
