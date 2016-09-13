@@ -16,3 +16,11 @@ function submitForm() {
     })
   })
 };
+
+function Ceu(title, date, location, duration, id) {
+  this.title = title;
+  this.date = date;
+  this.location = location;
+  this.duration = duration;
+  this.id = id;
+}
