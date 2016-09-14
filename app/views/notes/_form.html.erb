@@ -1,10 +1,7 @@
-<div class="card">
-  <h1 class="card-header display-4 childrens-4 text-xs-center">New Note</h1>
-  <div class="card-block">
-    <%= form_for [@ceu, @note] do |f| %>
-    <%= f.hidden_field :ceu_id %>
-    <%= f.text_area :content, size: "50x6" %>
-    <%= f.submit class: 'btn btn-outline-primary' %>
-    <% end %>
-  </div>
+<div class="card-block">
+  <%= form_for [@ceu, @note] do |f| %>
+  <%= f.hidden_field :ceu_id %>
+  <%= f.text_area :content, size: "50x6" %>
+  <%= f.submit class: 'btn btn-outline-primary' %>
+  <% end %>
 </div>
