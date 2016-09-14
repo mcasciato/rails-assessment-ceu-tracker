@@ -2,7 +2,14 @@
   <h1 class="card-header display-4 childrens-4 text-xs-center">Your CEUs:</h1>
   <div class="card-block">
     <% current_user.ceus.most_recent.uniq.each do |ceu| %>
-     <p><%= link_to ceu.title, user_ceu_path(current_user, ceu) %></p>
+     <p><%= link_to ceu.title, user_ceu_path(current_user, ceu) %> | <button class="js-more" data-id="<%= ceu.id %>">More Info</button></p>
     <% end %>
   </div>
+  <div class="card-footer text-muted text-xs-center">
+    <p>Most Recent First</p>
+  </div>
 </div>
+
+<script type="text/javascript">
+
+</script>
