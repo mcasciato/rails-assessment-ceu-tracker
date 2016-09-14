@@ -15,4 +15,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require new_note
+//= require new_ceu
