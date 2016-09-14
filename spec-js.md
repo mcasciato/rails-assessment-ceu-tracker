@@ -5,9 +5,12 @@ Specs:
 - [ ] Include a show page rendered using jQuery and an Active Model Serialization JSON backend.
 - [ ] Include an index page rendered using jQuery and an Active Model Serialization JSON backend.
 - [ ] Include at least one has_many relationship in information rendered via JSON
-- [ ] Include at least one link that loads or updates a resource without reloading the page
-- [ ] Translate JSON responses into js model objects
-- [ ] At least one of the js model objects must have at least one method added by your code to the prototype
+- [x] Include at least one link that loads or updates a resource without reloading the page
+  - (new ceu creation)
+- [x] Translate JSON responses into js model objects
+  - (new ceu creation -> after posting, is converted to JSON object; calls on createHTML function to render ceu info on page)
+- [x] At least one of the js model objects must have at least one method added by your code to the prototype
+  - (new ceu creation -> response is converted to JSON object after posting; calls on createHTML function to render ceu info on page; createHTML is a prototype method)
 
 Confirm
 - [ ] You have a large number of small Git commits
