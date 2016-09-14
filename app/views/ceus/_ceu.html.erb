@@ -1,11 +1,13 @@
 <div class="card">
   <div class="card-block">
     <h4 class="display-4"><%= @ceu.title %></h4>
+    <a href="#" class="js-previous" data-prev="<%=@ceu.id%>">Previous</a> |
+    <a href="#" class="js-next" data-id="<%=@ceu.id%>">Next</a>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item list-group-item-action">Location: <%= @ceu.location %></li>
-    <li class="list-group-item list-group-item-action">Date: <%= @ceu.date.strftime("%m/%d/%Y") %></li>
-    <li class="list-group-item list-group-item-action">Duration: <%= @ceu.duration %> minutes</li>
+    <li class="list-group-item list-group-item-action ceuLocation">Location: <%= @ceu.location %></li>
+    <li class="list-group-item list-group-item-action ceuDate">Date: <%= @ceu.date.strftime("%m/%d/%Y") %></li>
+    <li class="list-group-item list-group-item-action ceuDuration">Duration: <%= @ceu.duration %> minutes</li>
     <li class="list-group-item list-group-item-action">Certificate: <%= @ceu.certificate.classification %></li>
   </ul>
   <div class="card-block">
@@ -16,3 +18,14 @@
       <!-- <%= render 'notes/form' %> -->
   </div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+  $('.js-next').on('click', function(event){
+    event.preventDefault();
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get("/ceus" + nextId + ".json", function(data){
+      var ceu = data["ceu"];
+      $()
+    })
+  })
+</script>
