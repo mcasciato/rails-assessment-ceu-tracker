@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
 })
 
 function submitForm(){
-  $('form').submit(function(event){
+  $('#new_ceu').submit(function(event){
     event.preventDefault();
     var values = $(this).serialize();
     var posting = $.post('/ceus', values);
