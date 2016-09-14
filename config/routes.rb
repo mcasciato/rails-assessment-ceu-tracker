@@ -6,11 +6,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :ceus
   end
-  
+
   resources :ceus do
     resources :notes
   end
-
-  resources :notes
-
 end
