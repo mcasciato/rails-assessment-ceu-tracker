@@ -14,8 +14,6 @@ class CeusController < ApplicationController
 
   def create
     @ceu = current_user.ceus.create(ceu_params)
-    @certificate = Certificate.new(classification: params[:certificate][:classification], ceu_id: @ceu.id)
-    @ceu.certificate = @certificate
     if @ceu.save
       flash[:success] = "CEU successfully created!"
       render json: @ceu, status: 201
@@ -66,6 +64,6 @@ class CeusController < ApplicationController
   private
 
   def ceu_params
-    params.require(:ceu).permit(:title, :date, :duration, :location, certificate_attributes: [:classification, :ceu_id])
+    params.require(:ceu).permit(:title, :date, :duration, :location, :certificate)
   end
 end
