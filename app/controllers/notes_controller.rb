@@ -8,6 +8,10 @@ class NotesController < ApplicationController
     end
   end
 
+  def new
+    @note = Note.new
+  end
+
   def create
     @ceu = current_user.ceus.find_by(id: params[:id])
     @note = Note.new(note_params)

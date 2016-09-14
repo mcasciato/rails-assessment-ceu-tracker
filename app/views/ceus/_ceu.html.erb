@@ -14,16 +14,6 @@
     <%= link_to "Back", :back, class: 'btn btn-outline-info' %>
     <%= link_to "Edit CEU", edit_user_ceu_path, class: 'btn btn-outline-warning' %>
     <%= link_to "Delete CEU", user_ceu_path, method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Notes", new_note_path, class: 'btn btn-outline childrens-9' %>
   </div>
 </div>
-
-<script type="text/javascript" charset="utf-8">
-  $('.js-next').on('click', function(event){
-    event.preventDefault();
-    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
-    $.get("/ceus" + nextId + ".json", function(data){
-      var ceu = data["ceu"];
-      $()
-    })
-  })
-</script>
