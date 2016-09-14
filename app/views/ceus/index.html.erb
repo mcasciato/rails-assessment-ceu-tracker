@@ -1,4 +1,7 @@
-<h1 class="display-4">Your CEUs: </h1>
-<%= link_to "New CEU", new_user_ceu_path(current_user), class: 'btn btn-outline-info ' %>
-<br><br>
-<%= render 'users/userceus' %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 offset-md-3">
+      <%= render 'users/userceus' %>
+    </div>
+  </div>
+</div>
