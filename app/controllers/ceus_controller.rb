@@ -25,11 +25,11 @@ class CeusController < ApplicationController
 
   def show
     current_user = User.find_by(id: params[:user_id])
-    @ceu = current_user.ceus.find(params[:id])
+    @ceu = Ceu.find(params[:id])
     @note = Note.new
     respond_to do |format|
-      format.json {render json: @ceu}
       format.html {render :show}
+      format.json {render json: @ceu}
     end
   end
 

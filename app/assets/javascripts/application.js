@@ -16,4 +16,3 @@
 //= require turbolinks
 //= require_tree .
 //= require new_ceu
-//= require ceu_show
