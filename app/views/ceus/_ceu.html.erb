@@ -1,14 +1,14 @@
 <div class="card">
   <div class="card-block text-xs-center">
-    <h4 class="display-4" id="ceuTitle"><%= @ceu.title %></h4>
+    <h4 class="display-4 ceuTitle"><%= @ceu.title %></h4>
     <a href="#" class="js-previous" data-prev="<%=@ceu.id%>">Previous</a> |
     <a href="#" class="js-next" data-id="<%=@ceu.id%>">Next</a>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item list-group-item-action" id="ceuLocation">Location: <%= @ceu.location %></li>
-    <li class="list-group-item list-group-item-action" id="ceuDate">Date: <%= @ceu.date.strftime("%m/%d/%Y") %></li>
-    <li class="list-group-item list-group-item-action" id="ceuDuration">Duration: <%= @ceu.duration %> minutes</li>
-    <li class="list-group-item list-group-item-action" id="ceuCertificate">Certificate: <%= @ceu.certificate %></li>
+    <li class="list-group-item list-group-item-action ceuLocation">Location: <%= @ceu.location %></li>
+    <li class="list-group-item list-group-item-action ceuDate">Date: <%= @ceu.date.strftime("%m/%d/%Y") %></li>
+    <li class="list-group-item list-group-item-action ceuDuration">Duration: <%= @ceu.duration %> minutes</li>
+    <li class="list-group-item list-group-item-action ceuCertificate">Certificate: <%= @ceu.certificate %></li>
   </ul>
   <div class="card-block">
     <%= link_to "Back", :back, class: 'btn btn-outline-info' %>
