@@ -20,8 +20,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if current_user.admin?
       @users = User.all
-    else
-      @ceus = current_user.ceus
     end
+    @ceus = current_user.ceus
+    
   end
 end
