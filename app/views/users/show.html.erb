@@ -1,10 +1,13 @@
 <div class="container">
   <div class="row">
     <% if current_user.admin? %>
-      <h1 class="display-4">Hello, <%= @user.name %>!</h1>
-      <p class="lead">*ADMIN*</p>
-        <div class="col-xs-6 offset-md-3">
+      <h1 class="display-4 text-xs-center">Hello, <%= @user.name %>!</h1>
+      <p class="lead text-xs-center">*ADMIN*</p>
+        <div class="col-xs-6">
           <%= render 'user_info' %>
+        </div>
+        <div class="col-xs-6">
+          <h3 id="ceus">Your CEUs</h3>
         </div>
     <% else %>
       <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
