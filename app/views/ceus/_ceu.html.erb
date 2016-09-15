@@ -33,3 +33,20 @@
     });
   });
 </script>
+
+<script type="text/javascript" charset="utf-8">
+  $('.js-previous').on('click', function(event) {
+    event.preventDefault();
+    var prevId = parseInt($(".js-previous").attr("data-prev")) - 1;
+    $.get("/ceus/" + prevId + ".json", function (data) {
+      var ceu = data["ceu"];
+      $('#ceuTitle').text(data["title"]);
+      $('#ceuLocation').text("Location: " + data["location"]);
+      // $('#ceuDate').text("Date" + data["date"]);
+      $('#ceuDuration').text("Duration: " + data["duration"] + " minutes");
+      $('#ceuCertificate').text("Certificate: " + data["certificate"]);
+      $('.js-previous').attr("data-prev", data["id"]);
+      $('.js-next').attr("data-id"), data["id"];
+    });
+  });
+</script>
