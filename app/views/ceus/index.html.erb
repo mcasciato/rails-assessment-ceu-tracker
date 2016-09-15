@@ -11,3 +11,19 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $("a.show-ceu").on("click", function(e){
+    e.preventDefault();
+    $.get(this.href).success(function(json) {
+      var $ul = $("div.ceuDetails ul")
+      $ul.html("")
+      json.forEach(function(ceu){
+        var commentHtml = "<li>" + ceu.title + "</li>";
+        $ul.append(commentHtml);
+      });
+    });
+  });
+});
+</script>
