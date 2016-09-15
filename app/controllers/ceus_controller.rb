@@ -1,9 +1,9 @@
 class CeusController < ApplicationController
   def index
-    if params[:user_id]
-      @ceus = User.find(params[:user_id]).ceus
-    else
-      @ceus = Ceu.all
+    @ceus = current_user.ceus
+    respond_to do |format|
+      format.json {render json: @ceus}
+      format.html {render :index}
     end
   end
 
@@ -29,7 +29,7 @@ class CeusController < ApplicationController
     @note = Note.new
     respond_to do |format|
       format.html { render :show }
-      format.json ( render json: @ceu)      
+      format.json ( render json: @ceu)
     end
   end
 
