@@ -18,10 +18,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    if current_user.admin?
-      @users = User.all
-    end
-    @ceus = current_user.ceus
-    
+  #   if current_user.admin?
+  #     @users = User.all
+  #   end
+  #   @ceus = current_user.ceus
+  #
   end
 end

@@ -4,7 +4,8 @@ class CreateCeus < ActiveRecord::Migration
       t.string :title
       t.date :date
       t.integer :duration
-      t.integer :user_id
+      t.string :location
+      t.string :certificate
       t.timestamps null: false
     end
   end
