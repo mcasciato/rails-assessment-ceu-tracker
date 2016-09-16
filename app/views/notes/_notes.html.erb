@@ -5,7 +5,7 @@
       <tbody>
           <% @ceu.notes.most_recent.uniq.each do |note| %>
           <tr>
-            <td class="lead">
+            <td id="noteContent" class="lead">
                 <% if note.content.nil? %>
                 <%= link_to "Click here to Edit your First Note!", edit_ceu_note_path(@ceu.id, note) %>
                 <% else %>

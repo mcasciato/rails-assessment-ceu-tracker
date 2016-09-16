@@ -4,7 +4,7 @@
       <%= render 'ceu' %>
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-xs-6">
       <div class="card">
         <h1 class="card-header display-4 childrens-4 text-xs-center">New Note</h1>
@@ -14,7 +14,7 @@
     <div class="col-xs-6">
       <%= render 'notes/notes' %>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <script type="text/javascript" charset="utf-8">
@@ -22,7 +22,7 @@
     event.preventDefault();
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.get("/ceus/" + nextId + ".json", function(data){
-      var ceu = data["ceu"];
+      // var ceu = data["ceu"];
       var date = new Date(data["date"]);
       var result = (date.getMonth()+1) + '/' +(date.getDate()+1)  + '/' + date.getFullYear();
       $('#ceuTitle').text(data["title"]);
@@ -30,6 +30,7 @@
       $('#ceuDate').text("Date: " + result);
       $('#ceuDuration').text("Duration: " + data["duration"] + " minutes");
       $('#ceuCertificate').text("Certificate: " + data["certificate"]);
+      // $('#noteContent').text(data["notes"]);
       $('.js-next').attr("data-id", data["id"]);
       $('.js-previous').attr("data-prev", data["id"]);
     });
@@ -41,7 +42,7 @@
     event.preventDefault();
     var prevId = parseInt($(".js-previous").attr("data-prev")) - 1;
     $.get("/ceus/" + prevId + ".json", function (data) {
-      var ceu = data["ceu"];
+      // var ceu = data["ceu"];
       var date = new Date(data["date"]);
       var result = (date.getMonth()+1) + '/' +(date.getDate()+1)  + '/' + date.getFullYear();
       $('#ceuTitle').text(data["title"]);
@@ -49,6 +50,7 @@
       $('#ceuDate').text("Date: " + result);
       $('#ceuDuration').text("Duration: " + data["duration"] + " minutes");
       $('#ceuCertificate').text("Certificate: " + data["certificate"]);
+      // $('#noteContent').text(data["notes"]);
       $('.js-previous').attr("data-prev", data["id"]);
       $('.js-next').attr("data-id"), data["id"];
     });
