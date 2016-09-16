@@ -6,7 +6,7 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item list-group-item-action" id="ceuLocation">Location: <%= @ceu.location %></li>
-    <li class="list-group-item list-group-item-action" id="ceuDate">Date: <%= @ceu.date.strftime("%m/%d/%Y") %></li>
+    <li class="list-group-item list-group-item-action" id="ceuDate">Date: <%= @ceu.date.strftime("%-m/%-d/%Y") %></li>
     <li class="list-group-item list-group-item-action" id="ceuDuration">Duration: <%= @ceu.duration %> minutes</li>
     <li class="list-group-item list-group-item-action" id="ceuCertificate">Certificate: <%= @ceu.certificate %></li>
   </ul>

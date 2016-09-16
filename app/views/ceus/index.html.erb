@@ -21,7 +21,7 @@ $(function () {
       var $ul = $("div.ceuDetails ul")
       $ul.html("")
       json.forEach(function(ceu){
-        var commentHtml = "<li>" + ceu.title + "</li>";
+        var commentHtml = "<li>" + "<a href='/users/1/ceus/" + ceu.id + "'>" + ceu.title + "</a></li>";
         $ul.append(commentHtml);
       });
     });
