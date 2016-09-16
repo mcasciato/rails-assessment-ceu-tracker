@@ -6,7 +6,7 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item list-group-item-action" id="ceuLocation">Location: <%= @ceu.location %></li>
-    <!-- <li class="list-group-item list-group-item-action" id="ceuDate">Date: <%= @ceu.date.strftime("%m/%d/%Y") %></li> -->
+    <li class="list-group-item list-group-item-action" id="ceuDate">Date: <%= @ceu.date.strftime("%m/%d/%Y") %></li>
     <li class="list-group-item list-group-item-action" id="ceuDuration">Duration: <%= @ceu.duration %> minutes</li>
     <li class="list-group-item list-group-item-action" id="ceuCertificate">Certificate: <%= @ceu.certificate %></li>
   </ul>
@@ -23,9 +23,11 @@
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.get("/ceus/" + nextId + ".json", function(data){
       var ceu = data["ceu"];
+      var date = new Date(data["date"]);
+      var result = (date.getDate()+1) + '/' +(date.getMonth()+1)  + '/' + date.getFullYear();
       $('#ceuTitle').text(data["title"]);
       $('#ceuLocation').text("Location: " + data["location"]);
-      // $('#ceuDate').text("Date: " + data["date"]);
+      $('#ceuDate').text("Date: " + result);
       $('#ceuDuration').text("Duration: " + data["duration"] + " minutes");
       $('#ceuCertificate').text("Certificate: " + data["certificate"]);
       $('.js-next').attr("data-id", data["id"]);
@@ -40,9 +42,11 @@
     var prevId = parseInt($(".js-previous").attr("data-prev")) - 1;
     $.get("/ceus/" + prevId + ".json", function (data) {
       var ceu = data["ceu"];
+      var date = new Date(data["date"]);
+      var result = (date.getDate()+1) + '/' +(date.getMonth()+1)  + '/' + date.getFullYear();
       $('#ceuTitle').text(data["title"]);
       $('#ceuLocation').text("Location: " + data["location"]);
-      // $('#ceuDate').text("Date" + data["date"]);
+      $('#ceuDate').text("Date: " + result);
       $('#ceuDuration').text("Duration: " + data["duration"] + " minutes");
       $('#ceuCertificate').text("Certificate: " + data["certificate"]);
       $('.js-previous').attr("data-prev", data["id"]);
