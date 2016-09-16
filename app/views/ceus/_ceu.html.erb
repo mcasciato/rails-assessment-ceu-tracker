@@ -24,7 +24,7 @@
     $.get("/ceus/" + nextId + ".json", function(data){
       var ceu = data["ceu"];
       var date = new Date(data["date"]);
-      var result = (date.getDate()+1) + '/' +(date.getMonth()+1)  + '/' + date.getFullYear();
+      var result = (date.getMonth()+1) + '/' +(date.getDate()+1)  + '/' + date.getFullYear();
       $('#ceuTitle').text(data["title"]);
       $('#ceuLocation').text("Location: " + data["location"]);
       $('#ceuDate').text("Date: " + result);
@@ -43,7 +43,7 @@
     $.get("/ceus/" + prevId + ".json", function (data) {
       var ceu = data["ceu"];
       var date = new Date(data["date"]);
-      var result = (date.getDate()+1) + '/' +(date.getMonth()+1)  + '/' + date.getFullYear();
+      var result = (date.getMonth()+1) + '/' +(date.getDate()+1)  + '/' + date.getFullYear();
       $('#ceuTitle').text(data["title"]);
       $('#ceuLocation').text("Location: " + data["location"]);
       $('#ceuDate').text("Date: " + result);
