@@ -29,8 +29,8 @@ class CeusController < ApplicationController
   end
 
   def show
-    current_user = User.find_by(id: params[:user_id])
-    @ceu = Ceu.find(params[:id])
+    params[:user_id].to_i == current_user.id
+    @ceu = current_user.ceus.find(params[:id])
     @note = Note.new
     respond_to do |format|
       format.html {render :show}
