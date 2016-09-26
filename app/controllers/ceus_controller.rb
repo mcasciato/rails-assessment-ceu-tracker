@@ -1,9 +1,14 @@
 class CeusController < ApplicationController
   def index
-    @ceus = current_user.ceus
-    respond_to do |format|
-      format.json {render json: @ceus}
-      format.html {render :index}
+    if params[:user_id].to_i == current_user.id
+      @ceus = current_user.ceus
+      respond_to do |format|
+        format.json {render json: @ceus}
+        format.html {render :index}
+      end
+    else
+      flash[:error] = "You can only access your own CEUs."
+      redirect_to :root
     end
   end
 

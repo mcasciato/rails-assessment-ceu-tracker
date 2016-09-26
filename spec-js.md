@@ -3,6 +3,7 @@
 Specs:
 - [x] Use jQuery for implementing new requirements
 - [x] Include a show page rendered using jQuery and an Active Model Serialization JSON backend.
+  - (ceu show)
 - [x] Include an index page rendered using jQuery and an Active Model Serialization JSON backend.
  - (ceu index)
 - [x] Include at least one has_many relationship in information rendered via JSON

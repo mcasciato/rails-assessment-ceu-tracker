@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-6 offset-md-3">
       <h1 class="display 4 card-header childrens-4 text-xs-center">My CEUs</h1>
-      <p class="text-xs-center"><%= link_to "New CEU", new_user_ceu_path(current_user), class: 'btn btn-outline-info' %> | <a href="#" class="show-ceu btn btn-outline-info">Show CEUs</a></p>
+      <p class="text-xs-center"><%= link_to "New CEU", new_user_ceu_path(current_user), class: 'btn btn-outline-info' %> | <a href="/users/<%= current_user.id %>/ceus" class="show-ceu btn btn-outline-info">Show CEUs</a></p>
         <div class="ceuDetails">
           <ul>
           </ul>
@@ -16,7 +16,8 @@
 $(function () {
   $("a.show-ceu").on("click", function(e){
     e.preventDefault();
-    $.get(this.href).success(function(json) {
+
+    $.getJSON(this.href).success(function(json) {
       var $ul = $("div.ceuDetails ul")
       var user = <%= current_user.id %>
       $ul.html("")
