@@ -10,7 +10,7 @@
     <li class="list-group-item list-group-item-action" id="ceuDuration">Duration: <%= @ceu.duration %> minutes</li>
     <li class="list-group-item list-group-item-action" id="ceuCertificate">Certificate: <%= @ceu.certificate %></li>
   </ul>
-  <div class="card-block">
+  <div class="card-block text-xs-center">
     <%= link_to "Back", :back, class: 'btn btn-outline-info' %>
     <%= link_to "Edit CEU", edit_user_ceu_path, class: 'btn btn-outline-warning' %>
     <%= link_to "Delete CEU", user_ceu_path, method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' } %>

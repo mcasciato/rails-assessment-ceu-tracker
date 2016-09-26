@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-6 offset-md-3">
-      <h1 class="display 4 card-header childrens-4 text-xs-center">My CEUs</h1>
-      <p class="text-xs-center"><%= link_to "New CEU", new_user_ceu_path(current_user), class: 'btn btn-outline-info' %> | <a href="/users/<%= current_user.id %>/ceus" class="show-ceu btn btn-outline-info">Show CEUs</a></p>
-        <div class="ceuDetails">
-          <ul>
-          </ul>
-        </div>
-      <!-- <%= render 'users/userceus' %> -->
+      <div class="card">
+        <h1 class="display-4 card-header childrens-4 text-xs-center">Your CEUs</h1>
+        <p class="text-xs-center"><%= link_to "New CEU", new_user_ceu_path(current_user), class: 'btn btn-outline-info' %> | <a href="/users/<%= current_user.id %>/ceus" class="show-ceu btn btn-outline-info">Show CEUs</a></p>
+          <div class="card-block ceuDetails">
+            <ul>
+            </ul>
+          </div>
+      </div>
     </div>
   </div>
 </div>
@@ -21,7 +22,7 @@ $(function () {
       var user = <%= current_user.id %>
       $ul.html("")
       json.forEach(function(ceu){
-        var commentHtml = "<li>" + "<a href='/users/" + user + "/ceus/" + ceu.id + "'>" + ceu.title + "</a></li>";
+        var commentHtml = "<p class='lead'><a href='/users/" + user + "/ceus/" + ceu.id + "'>" + ceu.title + "</a></p>";
         $ul.append(commentHtml);
       });
     });
