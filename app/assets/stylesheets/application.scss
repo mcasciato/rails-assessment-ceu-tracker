@@ -1,8 +1,12 @@
 @import "bootstrap";
 @import "font-awesome";
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400|Roboto:300';
 
 body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
   font-family: 'Open Sans', sans-serif;
 }
 
