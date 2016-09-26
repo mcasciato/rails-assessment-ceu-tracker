@@ -16,7 +16,6 @@
 $(function () {
   $("a.show-ceu").on("click", function(e){
     e.preventDefault();
-
     $.getJSON(this.href).success(function(json) {
       var $ul = $("div.ceuDetails ul")
       var user = <%= current_user.id %>

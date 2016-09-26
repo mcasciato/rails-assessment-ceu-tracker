@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     if current_user.admin?
       @users = User.all
     else
-      redirect_to root_path
+      redirect_to :root
       flash[:error] = "You do not have admin access."
     end
   end
@@ -17,11 +17,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-  #   if current_user.admin?
-  #     @users = User.all
-  #   end
-  #   @ceus = current_user.ceus
-  #
+    if params[:id].to_i == current_user.id || current_user.admin?
+      @user = User.find(params[:id])
+    else
+      redirect_to :root
+      flash[:error] = "Unauthorized Access"
+    end
   end
 end
