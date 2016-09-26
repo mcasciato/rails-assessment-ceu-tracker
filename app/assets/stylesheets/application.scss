@@ -1,5 +1,10 @@
 @import "bootstrap";
 @import "font-awesome";
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 
 button {
   background-color: transparent;
@@ -73,7 +78,7 @@ button {
  }
  .childrens-8 {
    background-color: #D061A3;
-   color: white; 
+   color: white;
  }
  .childrens-9 {
    background-color: #E94E84;
