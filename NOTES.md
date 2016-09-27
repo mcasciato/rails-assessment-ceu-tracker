@@ -79,3 +79,6 @@ A Rails app for healthcare professionals to keep a record of their CEUs (Continu
   --------
 # JS Notes
 - can I delete the certificate table, and just add it to CEU?
+
+# Style Notes
+- add MD Bootstrap at later date
