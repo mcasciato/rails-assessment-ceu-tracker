@@ -21,7 +21,9 @@ class CeusController < ApplicationController
     @ceu = current_user.ceus.create(ceu_params)
     if @ceu.save
       flash[:success] = "CEU successfully created!"
-      render json: @ceu, status: 201
+      respond_to do |format|
+        format.json {render json: @ceu, status: 201}
+      end
     else
       flash[:error] = "Please fill in all fields."
       render :new
