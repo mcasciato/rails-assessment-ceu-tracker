@@ -3,7 +3,7 @@
     <div class="col-xs-6 offset-md-3">
       <div class="card">
         <h1 class="display-4 card-header childrens-4 text-xs-center">Your CEUs</h1>
-        <p class="text-xs-center"><%= link_to "New CEU", new_user_ceu_path(current_user), class: 'btn btn-outline-info' %> | <a href="/users/<%= current_user.id %>/ceus" class="show-ceu btn btn-outline-info">Show CEUs</a></p>
+        <p class="text-xs-center"><%= link_to "New CEU", new_user_ceu_path(current_user), class: 'btn btn-outline-info' %> | <%= link_to "Show CEUs", user_ceus_path(current_user), class: "show-ceu btn btn-outline-info" %></p>
           <div class="card-block ceuDetails">
             <ul>
             </ul>
