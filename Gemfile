@@ -18,6 +18,7 @@ gem 'sprockets-rails'
 # Design
 gem 'font-awesome-rails'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
+gem 'bootstrap-social-rails'
 
 
 group :development, :test do

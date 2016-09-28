@@ -49,6 +49,8 @@ GEM
     bootstrap (4.0.0.alpha3.1)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
+    bootstrap-social-rails (4.12.0)
+      railties (>= 3.1)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.7.1)
@@ -239,6 +241,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   bootstrap (~> 4.0.0.alpha3.1)
+  bootstrap-social-rails
   byebug
   capybara
   coffee-rails (~> 4.1.0)
