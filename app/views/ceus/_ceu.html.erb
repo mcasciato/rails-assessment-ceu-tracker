@@ -1,8 +1,8 @@
 <div class="card">
   <div class="card-block text-xs-center">
     <h4 class="display-4" id="ceuTitle"><%= @ceu.title %></h4>
-    <a href="#" class="js-previous fa fa-arrow-left fa-2x btn btn-outline-secondary" data-prev="<%=@ceu.id%>"></a>
-    <a href="#" class="js-next fa fa-arrow-right fa-2x btn btn-outline-secondary" data-id="<%=@ceu.id%>"></a>
+    <!-- <a href="#" class="js-previous fa fa-arrow-left fa-2x btn btn-outline-secondary" data-prev="<%=@ceu.id%>"></a> -->
+    <a href="#" class="js-next btn btn-outline-primary" data-id="<%=@ceu.id%>">Next CEU</a>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item list-group-item-action" id="ceuLocation">Location: <%= @ceu.location %></li>

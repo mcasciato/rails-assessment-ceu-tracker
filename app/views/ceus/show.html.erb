@@ -8,9 +8,10 @@
 
 <script type="text/javascript" charset="utf-8">
   $(function(){
+    var IDs = <%= current_user.ceu_ids %>
     $('.js-next').on('click', function(event){
       event.preventDefault();
-      var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+      var nextId = IDs.shift();
       $.get("/ceus/" + nextId + ".json", function(data){
         var date = new Date(data["date"]);
         var result = (date.getMonth()+1) + '/' +(date.getDate()+1)  + '/' + date.getFullYear();
@@ -20,24 +21,24 @@
         $('#ceuDuration').text("Duration: " + data["duration"] + " minutes");
         $('#ceuCertificate').text("Certificate: " + data["certificate"]);
         $('.js-next').attr("data-id", data["id"]);
-        $('.js-previous').attr("data-prev", data["id"]);
+        // $('.js-previous').attr("data-prev", data["id"]);
       });
     });
 
-    $('.js-previous').on('click', function(event) {
-      event.preventDefault();
-      var prevId = parseInt($(".js-previous").attr("data-prev")) - 1;
-      $.get("/ceus/" + prevId + ".json", function (data) {
-        var date = new Date(data["date"]);
-        var result = (date.getMonth()+1) + '/' +(date.getDate()+1)  + '/' + date.getFullYear();
-        $('#ceuTitle').text(data["title"]);
-        $('#ceuLocation').text("Location: " + data["location"]);
-        $('#ceuDate').text("Date: " + result);
-        $('#ceuDuration').text("Duration: " + data["duration"] + " minutes");
-        $('#ceuCertificate').text("Certificate: " + data["certificate"]);
-        $('.js-previous').attr("data-prev", data["id"]);
-        $('.js-next').attr("data-id"), data["id"];
-      });
-    });
+    // $('.js-previous').on('click', function(event) {
+    //   event.preventDefault();
+    //   var prevId = parseInt($(".js-previous").attr("data-prev")) - 1;
+    //   $.get("/ceus/" + prevId + ".json", function (data) {
+    //     var date = new Date(data["date"]);
+    //     var result = (date.getMonth()+1) + '/' +(date.getDate()+1)  + '/' + date.getFullYear();
+    //     $('#ceuTitle').text(data["title"]);
+    //     $('#ceuLocation').text("Location: " + data["location"]);
+    //     $('#ceuDate').text("Date: " + result);
+    //     $('#ceuDuration').text("Duration: " + data["duration"] + " minutes");
+    //     $('#ceuCertificate').text("Certificate: " + data["certificate"]);
+    //     $('.js-previous').attr("data-prev", data["id"]);
+    //     $('.js-next').attr("data-id"), data["id"];
+    //   });
+    // });
   });
 </script>
