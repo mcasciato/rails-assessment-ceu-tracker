@@ -14,6 +14,7 @@ $(function() {
         $('#ceuDetails').text("CEU Details");
         newCeu.createHTML();
       })
+      this.reset();
     })
   };
 

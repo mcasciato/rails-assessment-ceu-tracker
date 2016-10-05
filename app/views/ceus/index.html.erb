@@ -20,7 +20,8 @@
     // callback function loadCeus to be called
     function loadCeus(e) {
       e.preventDefault();
-      $.getJSON(this.href).success(function(json){
+      var result = $.getJSON(this.href);
+      result.success(function(json){
         var $ul = $('div.ceuDetails ul')
         var user = <%= current_user.id %>
         $ul.html("")
@@ -29,6 +30,12 @@
           $ul.append(commentHtml);
         });
       });
+      // create a toggle for showing/hiding CEUs ... ?
+          // add new class for button?
+      // change text of button to say "Hide CEUs"
+          // $(".show-ceu").text("Hide CEUs");
+      // change text back to "Show CEUs" when they are hidden
+          // $(".show-ceu").text("Show CEUS");
     };
   });
 </script>
