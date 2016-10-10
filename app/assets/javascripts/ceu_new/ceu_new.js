@@ -7,12 +7,23 @@ $(function() {
     $('#new_ceu').submit(function(event){
       event.preventDefault();
       var values = $(this).serialize();
-      var posting = $.post('/ceus', values);
-      posting.done(function(data){
-        var newCeu = new Ceu (data["title"], data["date"], data["location"], data["duration"], data["certificate"], data["id"]);
-        $('#show').show();
-        $('#ceuDetails').text("CEU Details");
-        newCeu.createHTML();
+      $.ajax({
+        type: 'post',
+        url: this.action,
+        data: values,
+        dataType: 'json',
+        success: function (data) {
+          var newCeu = new Ceu (data["title"], data["date"], data["location"], data["duration"], data["certificate"], data["id"]);
+          $('#show').show();
+          $('#ceuDetails').text("You successfully entered your CEU!");
+          newCeu.createHTML();
+          $('#ceuInfo').show();
+        },
+        error: function () {
+          $('#show').show();
+          $('#ceuDetails').text('You must fill in all fields.');
+          $('#ceuInfo').hide();
+        }
       })
       this.reset();
     })
@@ -34,5 +45,15 @@ $(function() {
     $('#ceuDuration').text("Duration: " + this.duration + " minutes");
     $('#ceuCertificate').text("Certificate: " + this.certificate);
   };
+
+  // success and error callbacks in separate functions?
+
+  // function ceuSuccess() {
+  //
+  // };
+  //
+  // function ceuError() {
+  //
+  // }
 
 });
