@@ -54,8 +54,9 @@ class CeusController < ApplicationController
     @ceu = Ceu.find(params[:id])
     @ceu.update(ceu_params)
     if @ceu.save
-      flash[:success] = "CEU successfully updated."
-      redirect_to user_ceu_path
+      respond_to do |format|
+        format.json {render json: @ceu, status: 201}
+      end
     else
       render :edit
     end
