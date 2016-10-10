@@ -11,7 +11,7 @@
     <li class="list-group-item list-group-item-action" id="ceuDuration">Duration: <%= @ceu.duration %> minutes</li>
     <li class="list-group-item list-group-item-action" id="ceuCertificate">Certificate: <%= @ceu.certificate %></li>
   </ul>
-  <div class="card-block text-xs-center">
+  <div class="card-block text-xs-center editOptions">
     <%= link_to "Back", :back, class: 'btn btn-outline-info' %>
     <%= link_to "Edit CEU", edit_user_ceu_path, class: 'btn btn-outline-warning ceuEdit' %>
     <%= link_to "Delete CEU", user_ceu_path, method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' } %>
@@ -23,7 +23,7 @@
     $('.edit_ceu').hide();
     $('.ceuEdit').on("click", function (e) {
       e.preventDefault();
-      $('ul').fadeOut(1000);
+      $('.list-group-flush, .editOptions, .js-next').fadeOut(1000);
       setTimeout(function () {
         $('.edit_ceu').fadeIn(1000);
       },500);
@@ -42,7 +42,6 @@
         }
       });
     });
-
     function Ceu(title, date, location, duration, certificate, id) {
       this.title = title;
       this.date = date,
@@ -50,7 +49,7 @@
       this.duration = duration;
       this.certificate = certificate;
       this.id = id;
-    }
+    };
 
     Ceu.prototype.createHTML = function() {
       $('#ceuTitle').text("Title: " + this.title);
