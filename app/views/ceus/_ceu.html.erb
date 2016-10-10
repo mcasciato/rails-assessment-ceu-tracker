@@ -38,7 +38,11 @@
         dataType: 'json',
         success: function (data) {
           var editedCeu = new Ceu (data["title"], data["date"], data["location"], data["duration"], data["certificate"], data["id"]);
-          alert("Success!")
+          $('.edit_ceu').fadeOut(1000);
+          editedCeu.createHTML();
+          setTimeout(function () {
+            $('.list-group-flush, .editOptions, .js-next').fadeIn(1000);
+          }, 500)
         }
       });
     });
@@ -52,7 +56,7 @@
     };
 
     Ceu.prototype.createHTML = function() {
-      $('#ceuTitle').text("Title: " + this.title);
+      $('#ceuTitle').text(this.title);
       $('#ceuDate').text("Date: " + this.date);
       $('#ceuLocation').text("Location: " + this.location);
       $('#ceuDuration').text("Duration: " + this.duration + " minutes");
