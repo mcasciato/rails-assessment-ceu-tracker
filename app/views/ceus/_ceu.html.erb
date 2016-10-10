@@ -4,6 +4,7 @@
     <!-- <a href="#" class="js-previous fa fa-arrow-left fa-2x btn btn-outline-secondary" data-prev="<%=@ceu.id%>"></a> -->
     <a href="#" class="js-next btn btn-outline-primary" data-id="<%=@ceu.id%>">Next CEU</a>
   </div>
+  <%= render 'form' %>
   <ul class="list-group list-group-flush">
     <li class="list-group-item list-group-item-action" id="ceuLocation">Location: <%= @ceu.location %></li>
     <li class="list-group-item list-group-item-action" id="ceuDate">Date: <%= @ceu.date.strftime("%-m/%-d/%Y") %></li>
@@ -12,7 +13,51 @@
   </ul>
   <div class="card-block text-xs-center">
     <%= link_to "Back", :back, class: 'btn btn-outline-info' %>
-    <%= link_to "Edit CEU", edit_user_ceu_path, class: 'btn btn-outline-warning' %>
+    <%= link_to "Edit CEU", edit_user_ceu_path, class: 'btn btn-outline-warning ceuEdit' %>
     <%= link_to "Delete CEU", user_ceu_path, method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' } %>
   </div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function(){
+    $('.edit_ceu').hide();
+    $('.ceuEdit').on("click", function (e) {
+      e.preventDefault();
+      $('ul').fadeOut(1000);
+      setTimeout(function () {
+        $('.edit_ceu').fadeIn(1000);
+      },500);
+    });
+    $('.edit_ceu').on('submit', function (e) {
+      e.preventDefault();
+      var values = $(this).serialize();
+      $.ajax({
+        type: 'put',
+        url: this.action,
+        data: values,
+        dataType: 'json',
+        success: function (data) {
+          var editedCeu = new Ceu (data["title"], data["date"], data["location"], data["duration"], data["certificate"], data["id"]);
+          alert("Success!")
+        }
+      });
+    });
+
+    function Ceu(title, date, location, duration, certificate, id) {
+      this.title = title;
+      this.date = date,
+      this.location = location;
+      this.duration = duration;
+      this.certificate = certificate;
+      this.id = id;
+    }
+
+    Ceu.prototype.createHTML = function() {
+      $('#ceuTitle').text("Title: " + this.title);
+      $('#ceuDate').text("Date: " + this.date);
+      $('#ceuLocation').text("Location: " + this.location);
+      $('#ceuDuration').text("Duration: " + this.duration + " minutes");
+      $('#ceuCertificate').text("Certificate: " + this.certificate);
+    };
+  });
+</script>
