@@ -1,12 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 offset-md-3">
+    <div class="col-md-6 offset-md-3">
       <div class="card">
-        <h1 class="display-4 card-header childrens-4 text-xs-center">Your CEUs</h1>
-        <p class="text-xs-center"><%= link_to "New CEU", new_user_ceu_path(current_user), class: 'btn btn-outline-info' %> | <%= link_to "Show CEUs", user_ceus_path(current_user), class: "show-ceu btn btn-outline-info" %></p>
-          <div class="card-block ceuDetails">
-            <ul>
-            </ul>
+          <h1 class="display-4 card-header childrens-4 text-center">Your CEUs</h1>
+          <div class="card-block">
+              <p class="text-center"><%= link_to "New CEU", new_user_ceu_path(current_user), class: 'btn btn-outline-info' %> | <%= link_to "Show CEUs", user_ceus_path(current_user), class: "show-ceu btn btn-outline-info" %></p>
+                <div class="card-block ceuDetails">
+                  <ul>
+                  </ul>
+                </div>
           </div>
       </div>
     </div>
