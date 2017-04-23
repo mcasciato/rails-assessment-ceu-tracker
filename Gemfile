@@ -17,7 +17,7 @@ gem 'faker'
 gem 'sprockets-rails'
 # Design
 gem 'font-awesome-rails'
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'bootstrap-social-rails'
 
 
