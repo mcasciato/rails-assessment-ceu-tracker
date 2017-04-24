@@ -1,7 +1,7 @@
 <div class="card">
-  <div class="card-block text-xs-center">
-    <h4  id="ceuTitle"><%= @ceu.title %></h4>
-    <!-- <a href="#" class="js-previous fa fa-arrow-left fa-2x btn btn-outline-secondary" data-prev="<%=@ceu.id%>"></a> -->
+  <div class="card-block text-center">
+    <h1 id="ceuTitle"><%= @ceu.title %></h1>
+    <br/>
     <a href="#" class="js-next btn btn-outline-primary" data-id="<%=@ceu.id%>">Next CEU</a>
   </div>
   <%= render 'form' %>
